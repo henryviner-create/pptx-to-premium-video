@@ -2,42 +2,40 @@ import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { AnimatedNumber } from '../components/AnimatedNumber';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 export type ScaleMetric = {
-  /** Display string shown big, e.g. "700K+" or "30M+". */
   display: string;
-  /** Numeric driver for the count-up. */
   value: number;
-  /** Tight unit/label under the figure, e.g. "hectares · authorised area". */
   caption: string;
 };
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  /** 2–4 metrics, side by side. */
   metrics: ScaleMetric[];
-  /** Tail line shown beneath the row, in inkSoft. */
   footnote?: string;
+  footage?: FootageRef;
 };
 
-/**
- * Multi-metric "scale" layout. Used for slides where 3–4 numbers tell
- * the story together (platform scale, portfolio summary). Each figure
- * counts up with a confident spring; captions land beneath, staggered.
- */
 export const MetricsScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
   eyebrow,
   title,
   subtitle,
   metrics,
   footnote,
+  footage,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
 
   const titleDelay = Math.round(fps * 0.2);
   const subtitleDelay = titleDelay + Math.round(fps * 0.6);
@@ -45,8 +43,8 @@ export const MetricsScene: React.FC<Props> = ({
   const metricStride = Math.round(fps * 0.4);
 
   return (
-    <SceneFrame>
-      <div style={{ width: '100%', maxWidth: 1700, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', maxWidth: 1700, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -54,7 +52,7 @@ export const MetricsScene: React.FC<Props> = ({
               fontSize: sizes.eyebrow,
               letterSpacing: 8,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 28,
             }}
           >
@@ -82,7 +80,7 @@ export const MetricsScene: React.FC<Props> = ({
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
               fontSize: sizes.subtitle,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               maxWidth: 1300,
             }}
           >
@@ -122,7 +120,7 @@ export const MetricsScene: React.FC<Props> = ({
                     display: 'block',
                     height: 2,
                     width: ruleW,
-                    background: theme.gold,
+                    background: ink.gold,
                     marginBottom: 28,
                     borderRadius: 1,
                   }}
@@ -134,9 +132,12 @@ export const MetricsScene: React.FC<Props> = ({
                     fontSize: figureSize(metrics.length, m.display),
                     lineHeight: 0.96,
                     letterSpacing: metrics.length >= 4 ? -2 : -3,
-                    color: theme.ink,
+                    color: ink.ink,
                     fontVariantNumeric: 'tabular-nums',
-                    textShadow: `0 6px 60px ${theme.goldFaint}`,
+                    textShadow:
+                      surface === 'forest' || surface === 'footage'
+                        ? `0 6px 60px ${theme.goldFaint}`
+                        : 'none',
                     whiteSpace: 'nowrap',
                   }}
                 >
@@ -154,7 +155,7 @@ export const MetricsScene: React.FC<Props> = ({
                     fontWeight: 400,
                     fontSize: 26,
                     lineHeight: 1.4,
-                    color: theme.inkSoft,
+                    color: ink.inkSoft,
                     maxWidth: 360,
                   }}
                 >
@@ -173,26 +174,19 @@ export const MetricsScene: React.FC<Props> = ({
               fontSize: 22,
               letterSpacing: 4,
               textTransform: 'uppercase',
-              color: theme.inkFaint,
+              color: ink.inkFaint,
             }}
           >
             {footnote}
           </div>
         ) : null}
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };
 
-/**
- * Pick a figure size that fits the column width given a 4-up grid at
- * 1700px maxWidth, accounting for the longest display string in the row.
- * Errs on the side of slightly smaller so descenders never clip.
- */
 function figureSize(count: number, display: string): number {
   const base = count <= 2 ? 160 : count === 3 ? 132 : count === 4 ? 100 : 84;
-  // For mixed text+numeric metrics like "Lloyd's", drop another ~12% so
-  // the longest string still fits the column.
   const isText = !/\d/.test(display);
   return Math.round(base * (isText ? 0.88 : 1));
 }

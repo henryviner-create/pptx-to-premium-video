@@ -1,44 +1,41 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 export type Region = {
-  /** "FLAGSHIP · ACTIVE" / "PIPELINE · FORWARD" — the status kicker. */
   kicker: string;
-  /** Place name in display weight, e.g. "Shabunda" or "Gabon". */
   name: string;
-  /** Country / system descriptor. */
   context: string;
-  /** Coordinates as a single string, e.g. "02° S · 27° E". */
   coordinates?: string;
-  /** Headline metric for the region. */
   metric: string;
-  /** Sub-metric, e.g. "credits · immediate" or "credits · forward". */
   metricCaption: string;
 };
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
   title: string;
   subtitle?: string;
   regions: [Region, Region];
+  footage?: FootageRef;
 };
 
-/**
- * Two-region portfolio layout. Used for the Shabunda + Gabon scene. Each
- * region animates in with a confident spring; the gold rule between the
- * two columns travels in vertically as a divider.
- */
 export const PortfolioScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
   eyebrow,
   title,
   subtitle,
   regions,
+  footage,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
 
   const titleDelay = Math.round(fps * 0.2);
   const subtitleDelay = titleDelay + Math.round(fps * 0.6);
@@ -51,8 +48,8 @@ export const PortfolioScene: React.FC<Props> = ({
   );
 
   return (
-    <SceneFrame>
-      <div style={{ width: '100%', maxWidth: 1700, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', maxWidth: 1700, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -60,7 +57,7 @@ export const PortfolioScene: React.FC<Props> = ({
               fontSize: sizes.eyebrow,
               letterSpacing: 8,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 28,
             }}
           >
@@ -88,7 +85,7 @@ export const PortfolioScene: React.FC<Props> = ({
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
               fontSize: sizes.subtitle,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               maxWidth: 1300,
             }}
           >
@@ -105,11 +102,17 @@ export const PortfolioScene: React.FC<Props> = ({
             alignItems: 'start',
           }}
         >
-          <RegionBlock region={regions[0]} delay={firstRegionDelay} now={frame} fps={fps} />
+          <RegionBlock
+            region={regions[0]}
+            delay={firstRegionDelay}
+            now={frame}
+            fps={fps}
+            ink={ink}
+          />
           <span
             style={{
               alignSelf: 'stretch',
-              background: theme.gold,
+              background: ink.gold,
               opacity: 0.45,
               transform: `scaleY(${dividerProgress})`,
               transformOrigin: 'top',
@@ -121,10 +124,11 @@ export const PortfolioScene: React.FC<Props> = ({
             delay={firstRegionDelay + Math.round(fps * 0.5)}
             now={frame}
             fps={fps}
+            ink={ink}
           />
         </div>
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };
 
@@ -133,7 +137,8 @@ const RegionBlock: React.FC<{
   delay: number;
   now: number;
   fps: number;
-}> = ({ region, delay, now, fps }) => {
+  ink: ReturnType<typeof inkFor>;
+}> = ({ region, delay, now, fps, ink }) => {
   const local = now - delay;
   const s = spring({
     frame: local,
@@ -151,7 +156,7 @@ const RegionBlock: React.FC<{
           fontSize: 20,
           letterSpacing: 6,
           textTransform: 'uppercase',
-          color: theme.gold,
+          color: ink.gold,
           marginBottom: 24,
         }}
       >
@@ -164,7 +169,7 @@ const RegionBlock: React.FC<{
           fontSize: 96,
           lineHeight: 1.0,
           letterSpacing: -2.6,
-          color: theme.ink,
+          color: ink.ink,
         }}
       >
         {region.name}.
@@ -175,7 +180,7 @@ const RegionBlock: React.FC<{
           fontFamily: theme.fontDisplay,
           fontWeight: 300,
           fontSize: 30,
-          color: theme.inkSoft,
+          color: ink.inkSoft,
         }}
       >
         {region.context}
@@ -187,7 +192,7 @@ const RegionBlock: React.FC<{
             fontFamily: theme.fontMono,
             fontSize: 22,
             letterSpacing: 4,
-            color: theme.inkFaint,
+            color: ink.inkFaint,
           }}
         >
           {region.coordinates}
@@ -201,9 +206,8 @@ const RegionBlock: React.FC<{
             fontSize: 88,
             lineHeight: 0.95,
             letterSpacing: -2,
-            color: theme.ink,
+            color: ink.ink,
             fontVariantNumeric: 'tabular-nums',
-            textShadow: `0 6px 60px ${theme.goldFaint}`,
           }}
         >
           {region.metric}
@@ -213,7 +217,7 @@ const RegionBlock: React.FC<{
             marginTop: 8,
             fontFamily: theme.fontDisplay,
             fontSize: 24,
-            color: theme.inkSoft,
+            color: ink.inkSoft,
           }}
         >
           {region.metricCaption}

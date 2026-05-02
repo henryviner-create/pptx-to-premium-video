@@ -1,0 +1,78 @@
+{
+  "$author": "claude (stage 2)",
+  "$generatedAt": "2026-05-02",
+  "$intent": "Curated Pexels briefs for the scenes where B-roll earns its place. Type-led scenes have no footage entry. Selection rules and grading are in scripts/prepare-footage.ts and src/components/SceneShell.tsx.",
+  "$audienceNotes": [
+    "Imagery is sober, contemplative, and free of any content that would jar an Arab institutional audience.",
+    "No people-focused footage; no party / nightlife / urban / advertising aesthetics.",
+    "Forest, canopy, light, water, and architectural-scale nature only.",
+    "Slow aerials and macro nature reads as scientific gravitas, which the film earns."
+  ],
+  "scenes": [
+    {
+      "sceneId": "scene-01",
+      "slug": "scene-01-forest-dawn-pullback",
+      "queries": [
+        "aerial rainforest sunrise drone",
+        "tropical forest aerial morning",
+        "rainforest canopy fog aerial"
+      ],
+      "minDurationSec": 14,
+      "preferredOrientation": "landscape",
+      "minWidth": 1920,
+      "intent": "Slow aerial pullback over a tropical canopy at first light. Establishes the film's contemplative register before the narrator says 'Voluntary carbon has a structural problem.' Avoid anything urban or human-centric."
+    },
+    {
+      "sceneId": "scene-04",
+      "slug": "scene-04-canopy-scale",
+      "queries": [
+        "amazon rainforest aerial wide canopy",
+        "tropical jungle aerial vast",
+        "drone forest river aerial"
+      ],
+      "minDurationSec": 18,
+      "preferredOrientation": "landscape",
+      "minWidth": 1920,
+      "intent": "Vast canopy aerial that visualises the scale of what the metrics describe (700K+ ha, 30M+, 100M+). Wide horizon, no close subjects."
+    },
+    {
+      "sceneId": "scene-07",
+      "slug": "scene-07-forest-light-cathedral",
+      "queries": [
+        "forest light rays cathedral trees",
+        "tropical forest sun rays calm",
+        "rainforest sunbeams ground level"
+      ],
+      "minDurationSec": 18,
+      "preferredOrientation": "landscape",
+      "minWidth": 1920,
+      "intent": "Ground-level forest interior with light rays through the canopy. Carries the Maqasid framing — stewardship, life, lineage. Reverent, never cliché."
+    },
+    {
+      "sceneId": "scene-10",
+      "slug": "scene-10-equatorial-aerial",
+      "queries": [
+        "africa rainforest aerial congo",
+        "tropical river aerial africa",
+        "equatorial forest aerial wide"
+      ],
+      "minDurationSec": 16,
+      "preferredOrientation": "landscape",
+      "minWidth": 1920,
+      "intent": "Equatorial aerial that grounds the Shabunda + Gabon portfolio. Avoid anything resembling agriculture or settlements; pure forest + watercourse only."
+    },
+    {
+      "sceneId": "scene-13",
+      "slug": "scene-13-forest-dawn-close",
+      "queries": [
+        "rainforest sunrise calm peaceful",
+        "tropical forest sunrise aerial",
+        "morning forest mist canopy"
+      ],
+      "minDurationSec": 12,
+      "preferredOrientation": "landscape",
+      "minWidth": 1920,
+      "intent": "Quiet forest dawn — closes the film with a return to the natural object the platform is built around. Holds the longest of any scene."
+    }
+  ]
+}

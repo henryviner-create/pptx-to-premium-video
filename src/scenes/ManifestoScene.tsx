@@ -1,32 +1,37 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
-  /** Three short lines, set as a creed. */
   lines: string[];
-  /** Optional closing tagline rendered in inkSoft below the lines. */
   closer?: string;
+  footage?: FootageRef;
 };
 
-/**
- * Three-line creed scene. Each line lands with a settled spring, and a
- * gold rule travels in beside the active line. The cumulative effect
- * reads as a manifesto, not a bullet list.
- */
-export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
+export const ManifestoScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
+  eyebrow,
+  lines,
+  closer,
+  footage,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
 
-  const lineDelayFrames = (i: number) =>
+  const lineDelay = (i: number) =>
     Math.round(fps * 0.4) + i * Math.round(fps * 1.6);
 
   return (
-    <SceneFrame>
-      <div style={{ maxWidth: 1500, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ maxWidth: 1500, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -34,7 +39,7 @@ export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
               fontSize: sizes.eyebrow,
               letterSpacing: 8,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 80,
             }}
           >
@@ -44,7 +49,7 @@ export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           {lines.map((line, i) => {
-            const local = frame - lineDelayFrames(i);
+            const local = frame - lineDelay(i);
             const s = spring({
               frame: local,
               fps,
@@ -69,7 +74,7 @@ export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
                     flex: '0 0 auto',
                     height: 4,
                     width: ruleW,
-                    background: theme.gold,
+                    background: ink.gold,
                     transform: 'translateY(-18px)',
                     borderRadius: 2,
                   }}
@@ -81,7 +86,7 @@ export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
                     fontSize: sizes.manifesto,
                     lineHeight: 1.12,
                     letterSpacing: -1.4,
-                    color: theme.ink,
+                    color: ink.ink,
                   }}
                 >
                   {line}
@@ -98,18 +103,18 @@ export const ManifestoScene: React.FC<Props> = ({ eyebrow, lines, closer }) => {
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
               fontSize: sizes.subtitle,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               maxWidth: 1100,
             }}
           >
             <KineticText
               text={closer}
-              delay={lineDelayFrames(lines.length)}
+              delay={lineDelay(lines.length)}
               staggerFrames={1.6}
             />
           </div>
         ) : null}
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };

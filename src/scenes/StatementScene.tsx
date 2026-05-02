@@ -1,28 +1,40 @@
 import React from 'react';
 import { useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
   title: string;
   subtitle?: string;
+  footage?: FootageRef;
 };
 
 /**
- * Editorial single-statement scene. One thought, full frame, hero scale.
- * No imagery, no list, no logo. Used for the opening line and any other
- * scene whose entire job is to land one sentence cleanly.
+ * Single-statement scene. One thought, full frame, hero scale. Used
+ * for the opening line and any other moment whose entire job is to
+ * land one sentence cleanly.
  */
-export const StatementScene: React.FC<Props> = ({ eyebrow, title, subtitle }) => {
+export const StatementScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
+  eyebrow,
+  title,
+  subtitle,
+  footage,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const subtitleDelayFrames = Math.round((title.split(/\s+/).length + 8) * fps * 0.06);
+  const ink = inkFor(surface);
+  const subtitleDelay = Math.round((title.split(/\s+/).length + 8) * fps * 0.06);
 
   return (
-    <SceneFrame>
-      <div style={{ width: '100%', maxWidth: 1500, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', maxWidth: 1500, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -30,7 +42,7 @@ export const StatementScene: React.FC<Props> = ({ eyebrow, title, subtitle }) =>
               fontSize: sizes.eyebrow,
               letterSpacing: 6,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 60,
             }}
           >
@@ -45,7 +57,7 @@ export const StatementScene: React.FC<Props> = ({ eyebrow, title, subtitle }) =>
             lineHeight: 1.06,
             letterSpacing: -2,
             margin: 0,
-            color: theme.ink,
+            color: ink.ink,
           }}
         >
           <KineticText text={title} delay={4} staggerFrames={2.4} />
@@ -58,16 +70,12 @@ export const StatementScene: React.FC<Props> = ({ eyebrow, title, subtitle }) =>
               fontSize: sizes.subtitle,
               lineHeight: 1.4,
               letterSpacing: -0.3,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               marginTop: 48,
               maxWidth: 1200,
             }}
           >
-            <KineticText
-              text={subtitle}
-              delay={subtitleDelayFrames}
-              staggerFrames={1.6}
-            />
+            <KineticText text={subtitle} delay={subtitleDelay} staggerFrames={1.6} />
           </div>
         ) : null}
         <div
@@ -75,12 +83,12 @@ export const StatementScene: React.FC<Props> = ({ eyebrow, title, subtitle }) =>
             marginTop: 80,
             width: 120,
             height: 2,
-            background: theme.gold,
+            background: ink.gold,
             opacity: Math.min(1, frame / Math.max(1, fps * 0.6)),
             transformOrigin: 'left',
           }}
         />
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };

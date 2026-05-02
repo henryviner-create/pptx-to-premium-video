@@ -1,33 +1,38 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 export type Pillar = {
-  /** Tiny mono kicker shown before the label, e.g. "01" or "DIN". */
   index?: string;
   label: string;
   body?: string;
 };
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  /** 3–6 items. Beyond 6 the layout starts to read like a slide deck. */
   items: Pillar[];
+  footage?: FootageRef;
 };
 
-/**
- * The workhorse "principles" layout. Used for the three pillars, the four
- * takaful constructs, the five Maqasid, the institutional tests, and the
- * engagement pathways. Items reveal sequentially with a confident spring;
- * the gold rule travels in beside each item as it lands.
- */
-export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items }) => {
+export const PillarsScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
+  eyebrow,
+  title,
+  subtitle,
+  items,
+  footage,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
 
   const titleDelay = Math.round(fps * 0.2);
   const subtitleDelay = titleDelay + Math.round(fps * 0.6);
@@ -35,8 +40,8 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
   const itemStride = Math.round(fps * 0.55);
 
   return (
-    <SceneFrame>
-      <div style={{ width: '100%', maxWidth: 1500, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', maxWidth: 1500, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -44,7 +49,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
               fontSize: sizes.eyebrow,
               letterSpacing: 8,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 28,
             }}
           >
@@ -60,7 +65,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
             lineHeight: 1.06,
             letterSpacing: -2,
             margin: 0,
-            color: theme.ink,
+            color: ink.ink,
           }}
         >
           <KineticText text={title} delay={titleDelay} staggerFrames={2.2} />
@@ -73,7 +78,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
               fontSize: sizes.subtitle,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               maxWidth: 1100,
             }}
           >
@@ -117,7 +122,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
                     fontFamily: theme.fontMono,
                     fontSize: 22,
                     letterSpacing: 4,
-                    color: theme.gold,
+                    color: ink.gold,
                     textTransform: 'uppercase',
                   }}
                 >
@@ -127,7 +132,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
                   style={{
                     height: 2,
                     width: ruleW,
-                    background: theme.gold,
+                    background: ink.gold,
                     transform: 'translateY(-18px)',
                     borderRadius: 1,
                   }}
@@ -140,7 +145,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
                       fontSize: sizes.bullet,
                       lineHeight: 1.18,
                       letterSpacing: -0.6,
-                      color: theme.ink,
+                      color: ink.ink,
                     }}
                   >
                     {p.label}
@@ -153,7 +158,7 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
                         fontWeight: 300,
                         fontSize: 28,
                         lineHeight: 1.4,
-                        color: theme.inkSoft,
+                        color: ink.inkSoft,
                         maxWidth: 1100,
                       }}
                     >
@@ -166,6 +171,6 @@ export const PillarsScene: React.FC<Props> = ({ eyebrow, title, subtitle, items 
           })}
         </div>
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };

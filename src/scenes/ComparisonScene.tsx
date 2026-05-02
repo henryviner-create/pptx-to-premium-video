@@ -1,42 +1,41 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 export type ComparisonColumn = {
-  /** Mono kicker, e.g. "ESTIMATION-FIRST". */
   kicker: string;
   label: string;
-  /** Short bullet items (3–4 each). */
   items: string[];
-  /** Soft / decline tone for the "old" column, gold for the "new" column. */
   tone: 'muted' | 'accent';
 };
 
 type Props = {
+  surface: SurfaceKind;
+  sceneFrames: number;
   eyebrow?: string;
   title: string;
   subtitle?: string;
   left: ComparisonColumn;
   right: ComparisonColumn;
+  footage?: FootageRef;
 };
 
-/**
- * Two-column "before/after" or "this/not-that" comparison. Used for the
- * methodology contrast (estimation vs direct measurement) and the two
- * product categories (high-integrity vs tokenised). The accent column
- * leans into gold; the muted column dims to inkSoft.
- */
 export const ComparisonScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
   eyebrow,
   title,
   subtitle,
   left,
   right,
+  footage,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
 
   const titleDelay = Math.round(fps * 0.2);
   const subtitleDelay = titleDelay + Math.round(fps * 0.55);
@@ -44,8 +43,8 @@ export const ComparisonScene: React.FC<Props> = ({
   const itemStride = Math.round(fps * 0.3);
 
   return (
-    <SceneFrame>
-      <div style={{ width: '100%', maxWidth: 1700, color: theme.ink }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', maxWidth: 1700, color: ink.ink }}>
         {eyebrow ? (
           <div
             style={{
@@ -53,7 +52,7 @@ export const ComparisonScene: React.FC<Props> = ({
               fontSize: sizes.eyebrow,
               letterSpacing: 8,
               textTransform: 'uppercase',
-              color: theme.gold,
+              color: ink.gold,
               marginBottom: 28,
             }}
           >
@@ -81,7 +80,7 @@ export const ComparisonScene: React.FC<Props> = ({
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
               fontSize: sizes.subtitle,
-              color: theme.inkSoft,
+              color: ink.inkSoft,
               maxWidth: 1300,
             }}
           >
@@ -104,6 +103,7 @@ export const ComparisonScene: React.FC<Props> = ({
             itemStride={itemStride}
             now={frame}
             fps={fps}
+            ink={ink}
           />
           <div
             style={{
@@ -121,7 +121,7 @@ export const ComparisonScene: React.FC<Props> = ({
               style={{
                 fontFamily: theme.fontMono,
                 fontSize: 28,
-                color: theme.gold,
+                color: ink.gold,
               }}
             >
               →
@@ -133,10 +133,11 @@ export const ComparisonScene: React.FC<Props> = ({
             itemStride={itemStride}
             now={frame}
             fps={fps}
+            ink={ink}
           />
         </div>
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };
 
@@ -146,7 +147,8 @@ const Column: React.FC<{
   itemStride: number;
   now: number;
   fps: number;
-}> = ({ col, startFrame, itemStride, now, fps }) => {
+  ink: ReturnType<typeof inkFor>;
+}> = ({ col, startFrame, itemStride, now, fps, ink }) => {
   const headerLocal = now - startFrame;
   const headerSpring = spring({
     frame: headerLocal,
@@ -157,8 +159,8 @@ const Column: React.FC<{
     extrapolateRight: 'clamp',
   });
   const ty = interpolate(headerSpring, [0, 1], [22, 0], { extrapolateRight: 'clamp' });
-  const labelColor = col.tone === 'accent' ? theme.ink : theme.inkSoft;
-  const kickerColor = col.tone === 'accent' ? theme.gold : theme.inkFaint;
+  const labelColor = col.tone === 'accent' ? ink.ink : ink.inkSoft;
+  const kickerColor = col.tone === 'accent' ? ink.gold : ink.inkFaint;
 
   return (
     <div style={{ opacity, transform: `translateY(${ty}px)` }}>
@@ -216,7 +218,7 @@ const Column: React.FC<{
                 fontWeight: 400,
                 fontSize: 28,
                 lineHeight: 1.4,
-                color: col.tone === 'accent' ? theme.ink : theme.inkSoft,
+                color: col.tone === 'accent' ? ink.ink : ink.inkSoft,
                 paddingLeft: 28,
                 position: 'relative',
               }}
@@ -228,7 +230,7 @@ const Column: React.FC<{
                   top: '0.45em',
                   width: 12,
                   height: 2,
-                  background: col.tone === 'accent' ? theme.gold : theme.inkFaint,
+                  background: col.tone === 'accent' ? ink.gold : ink.inkFaint,
                 }}
               />
               {item}

@@ -1,33 +1,38 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { BrandLogo } from '../components/BrandLogo';
-import { SceneFrame } from '../components/SceneFrame';
-import { theme, sizes } from '../theme';
+import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { theme, sizes, inkFor } from '../theme';
+import type { SurfaceKind } from '../components/Surface';
 
 type Props = {
-  /** Three short lines at equal weight. */
+  surface: SurfaceKind;
+  sceneFrames: number;
   lines: string[];
-  /** Optional location stamp under the logo, e.g. "Guernsey, Channel Islands". */
   location?: string;
+  footage?: FootageRef;
 };
 
-/**
- * Closing beat. Logo lockup at the top, three editorial lines beneath,
- * a quiet horizontal rule between. Holds for the longest of any scene
- * so the audio fade lands clean.
- */
-export const ClosingScene: React.FC<Props> = ({ lines, location }) => {
+export const ClosingScene: React.FC<Props> = ({
+  surface,
+  sceneFrames,
+  lines,
+  location,
+  footage,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const ink = inkFor(surface);
+  const logoVariant = surface === 'cream' ? 'horizontal-gold' : 'horizontal-white';
 
   const lineDelay = (i: number) =>
     Math.round(fps * 0.9) + i * Math.round(fps * 0.55);
 
   return (
-    <SceneFrame>
-      <div style={{ textAlign: 'center', color: theme.ink, maxWidth: 1500 }}>
+    <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
+      <div style={{ width: '100%', textAlign: 'center', color: ink.ink, maxWidth: 1500 }}>
         <BrandLogo
-          variant="horizontal-white"
+          variant={logoVariant}
           width={520}
           delay={Math.round(fps * 0.2)}
           fadeFrames={Math.round(fps * 0.9)}
@@ -43,7 +48,7 @@ export const ClosingScene: React.FC<Props> = ({ lines, location }) => {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             }),
-            background: theme.gold,
+            background: ink.gold,
             borderRadius: 1,
           }}
         />
@@ -76,7 +81,7 @@ export const ClosingScene: React.FC<Props> = ({ lines, location }) => {
                   fontSize: 64,
                   lineHeight: 1.18,
                   letterSpacing: -1,
-                  color: theme.ink,
+                  color: ink.ink,
                   opacity,
                   transform: `translateY(${ty}px)`,
                 }}
@@ -95,13 +100,13 @@ export const ClosingScene: React.FC<Props> = ({ lines, location }) => {
               fontSize: sizes.eyebrow,
               letterSpacing: 6,
               textTransform: 'uppercase',
-              color: theme.inkFaint,
+              color: ink.inkFaint,
             }}
           >
             {location}
           </div>
         ) : null}
       </div>
-    </SceneFrame>
+    </SceneShell>
   );
 };

@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-05-02T11:23:25.713Z",
+  "source": "src/data/footage-plan.json",
+  "entries": [],
+  "warnings": [
+    "PEXELS_API_KEY not set; no footage downloaded."
+  ]
+}
