@@ -33,21 +33,25 @@ what the voiceover actually says, not just what the deck contains.
 
 ### Stage 1 — Data preparation (mechanical, runs in CI)
 
-| Step | Script                              | Reads                         | Writes                                 |
-| ---- | ----------------------------------- | ----------------------------- | -------------------------------------- |
-| 1    | `npm run prepare:audio`             | `input/master-voiceover.mp3`  | `public/audio/master-voiceover.mp3`    |
-| 2    | `npm run extract`                   | `input/deck.pptx`             | `src/data/pptx-extracted.json`, `public/media/*` |
-| 3    | `npm run transcribe`                | `public/audio/master-voiceover.mp3` | `src/data/master-transcript.json`, `src/data/master-transcript.txt` |
+| Step | Script                              | Reads                                                                                | Writes                                                                                                          |
+| ---- | ----------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| 1    | `npm run prepare:audio`             | `input/master-voiceover.mp3`                                                         | `public/audio/master-voiceover.mp3`                                                                             |
+| 2    | `npm run prepare:logos`             | `input/tentrinity-carbon-*.png`                                                      | `public/logos/*.png`                                                                                            |
+| 3    | `npm run extract:pptx`              | `input/deck.pptx`                                                                    | `src/data/pptx-extracted.json`, `public/media/*`                                                                |
+| 4    | `npm run parse:transcript`          | `input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt`             | `src/data/master-transcript.json`, `src/data/master-transcript.txt`, `src/data/scene-timings.json`              |
 
-`npm run prepare:data` runs all three in order. Stage 1 runs in the
+`npm run prepare:data` runs all four in order. Stage 1 runs in the
 `1 - Prepare data` workflow (`.github/workflows/prepare-data.yml`),
 which **commits the generated files back to the branch** so Claude
 Code can read them via a normal `git pull`. There is no artifact
-download step.
+download step, no API call, no transcription. The transcript is
+supplied by the user pre-aligned to the AAF timeline.
 
-The transcribe step requires `ELEVENLABS_API_KEY` (uses Speech-to-Text
-`scribe_v1`). If it is missing, the script exits non-zero so CI fails
-loudly: there is no fallback that would produce a credible transcript.
+`scene-timings.json` uses the **13 AAF Clip boundaries as the primary
+scene timing structure**. Sentence-level cues inside each clip are
+treated as editing cues, not hard scene boundaries — they let the
+motion plan reveal beats inside a scene at known timestamps without
+breaking the continuous voiceover.
 
 ### Stage 2 — AI scene design (Claude authors by hand)
 
@@ -75,12 +79,16 @@ and re-author the Stage 2 files.
 
 ## Inputs the user provides
 
-| Path                                  | Required | Notes |
-| ------------------------------------- | -------- | ----- |
-| `input/deck.pptx`                     | yes      | The source PowerPoint. |
-| `input/master-voiceover.mp3`          | yes      | The single, continuous voiceover. |
-| `input/voiceover-script.txt`          | optional | Plain-text transcript supplied by hand; if present, may be used in place of an STT call. |
-| GitHub secret `ELEVENLABS_API_KEY`    | yes      | Required for the transcribe step in Stage 1. |
+| Path                                                                          | Required | Notes |
+| ----------------------------------------------------------------------------- | -------- | ----- |
+| `input/deck.pptx`                                                             | yes      | The source PowerPoint. |
+| `input/master-voiceover.mp3`                                                  | yes      | The single, continuous voiceover. Never split, never re-encoded. |
+| `input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt`      | yes      | AAF-aligned transcript supplied by the user. 13 clip boundaries + sentence cues. |
+| `input/tentrinity-carbon-icon-gold.png`                                       | yes      | Icon mark, gold. |
+| `input/tentrinity-carbon-icon-gold-lightgrey.png`                             | yes      | Icon mark on light-grey background. |
+| `input/tentrinity-carbon-icon-gold-white.png`                                 | yes      | Icon mark on white. |
+| `input/tentrinity-carbon-horizontal-gold.png`                                 | yes      | Horizontal lockup, gold. |
+| `input/tentrinity-carbon-horizontal-white.png`                                | yes      | Horizontal lockup, white. |
 
 ## Scene grammar
 
@@ -179,8 +187,9 @@ input/
 
 scripts/
   prepare-audio.ts                   Stage 1 step 1: copy mp3 -> public/audio
-  extract-pptx.ts                    Stage 1 step 2: pptx -> pptx-extracted.json + public/media
-  transcribe-voiceover.ts            Stage 1 step 3: STT -> master-transcript.{json,txt}
+  prepare-logos.ts                   Stage 1 step 2: copy logos -> public/logos
+  extract-pptx.ts                    Stage 1 step 3: pptx -> pptx-extracted.json + public/media
+  parse-aaf-transcript.ts            Stage 1 step 4: parse AAF transcript -> master-transcript.{json,txt} + scene-timings.json
 
 src/
   Root.tsx                           registerComposition('Main')

@@ -1,16 +1,18 @@
 name: 1 - Prepare data
 
 # Stage 1, mechanical. Generates the data files Claude needs to author
-# Stage 2 (presentation.json, motion-plan.json, scene-timings.json) and
-# COMMITS THEM BACK to the same branch. Claude reads the result via a
-# normal `git pull` — no artifact download required.
+# Stage 2 (presentation.json, motion-plan.json) and COMMITS THEM BACK to
+# the same branch. Claude reads the result via a normal `git pull` —
+# no artifact download required.
 #
 # Inputs (must be committed in advance):
 #   input/deck.pptx
 #   input/master-voiceover.mp3
+#   input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt
+#   input/tentrinity-carbon-*.png
 #
-# Required secret:
-#   ELEVENLABS_API_KEY  (used by `npm run transcribe`)
+# This workflow does NOT call ElevenLabs, does NOT transcribe, and does
+# NOT need ELEVENLABS_API_KEY. The transcript is supplied by the user.
 #
 # Manual trigger only — `workflow_dispatch`.
 
@@ -23,7 +25,7 @@ permissions:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,19 +44,27 @@ jobs:
 
       - name: Verify inputs
         run: |
-          test -f input/deck.pptx || { echo "::error::input/deck.pptx is missing"; exit 1; }
-          test -f input/master-voiceover.mp3 || { echo "::error::input/master-voiceover.mp3 is missing"; exit 1; }
+          set -e
+          test -f input/deck.pptx                                                     || { echo "::error::input/deck.pptx is missing"; exit 1; }
+          test -f input/master-voiceover.mp3                                          || { echo "::error::input/master-voiceover.mp3 is missing"; exit 1; }
+          test -f input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt || { echo "::error::AAF transcript is missing"; exit 1; }
+          for f in tentrinity-carbon-icon-gold.png \
+                   tentrinity-carbon-icon-gold-lightgrey.png \
+                   tentrinity-carbon-icon-gold-white.png \
+                   tentrinity-carbon-horizontal-gold.png \
+                   tentrinity-carbon-horizontal-white.png ; do
+            test -f "input/$f" || { echo "::error::input/$f is missing"; exit 1; }
+          done
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Stage 1 (prepare:audio + extract + transcribe)
-        env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      - name: Run Stage 1
         run: npm run prepare:data
 
       - name: Commit and push generated data
         run: |
+          set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -62,7 +72,9 @@ jobs:
             src/data/pptx-extracted.json \
             src/data/master-transcript.json \
             src/data/master-transcript.txt \
-            public/media
+            src/data/scene-timings.json \
+            public/media \
+            public/logos
 
           if git diff --cached --quiet; then
             echo "No data changes to commit."

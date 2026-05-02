@@ -5,12 +5,13 @@
   "description": "Cloud-only pipeline: PowerPoint + voiceover -> premium animated Remotion video.",
   "scripts": {
     "prepare:audio": "tsx scripts/prepare-audio.ts",
-    "extract": "tsx scripts/extract-pptx.ts",
-    "transcribe": "tsx scripts/transcribe-voiceover.ts",
-    "prepare:data": "npm run prepare:audio && npm run extract && npm run transcribe",
+    "prepare:logos": "tsx scripts/prepare-logos.ts",
+    "extract:pptx": "tsx scripts/extract-pptx.ts",
+    "parse:transcript": "tsx scripts/parse-aaf-transcript.ts",
+    "prepare:data": "npm run prepare:audio && npm run prepare:logos && npm run extract:pptx && npm run parse:transcript",
     "studio": "remotion studio",
-    "render": "remotion render Main out/final.mp4 --concurrency=1 --log=verbose",
-    "build-video": "npm run prepare:audio && npm run render",
+    "render": "remotion render AnimatedPresentation out/final.mp4",
+    "build-video": "npm run prepare:audio && npm run prepare:logos && npm run render",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

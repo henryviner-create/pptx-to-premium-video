@@ -5,10 +5,6 @@ name: 2 - Render video
 #   src/data/motion-plan.json
 #   src/data/scene-timings.json
 #
-# The render itself runs `npm run build-video`, which copies the master
-# voiceover into public/audio/ and then renders the Remotion composition
-# `Main` to out/final.mp4.
-#
 # Output:
 #   Artifact `final-animated-presentation` containing out/final.mp4.
 #
@@ -53,16 +49,20 @@ jobs:
 
       - name: Verify inputs and Stage 2 design files
         run: |
-          test -f input/master-voiceover.mp3       || { echo "::error::input/master-voiceover.mp3 is missing";    exit 1; }
-          test -f src/data/presentation.json       || { echo "::error::src/data/presentation.json is missing — Stage 2 not authored?"; exit 1; }
-          test -f src/data/motion-plan.json        || { echo "::error::src/data/motion-plan.json is missing";     exit 1; }
-          test -f src/data/scene-timings.json      || { echo "::error::src/data/scene-timings.json is missing";   exit 1; }
+          set -e
+          test -f input/deck.pptx                                                     || { echo "::error::input/deck.pptx is missing"; exit 1; }
+          test -f input/master-voiceover.mp3                                          || { echo "::error::input/master-voiceover.mp3 is missing"; exit 1; }
+          test -f input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt || { echo "::error::AAF transcript is missing"; exit 1; }
+          test -f input/tentrinity-carbon-horizontal-white.png                        || { echo "::error::input/tentrinity-carbon-horizontal-white.png is missing"; exit 1; }
+          test -f input/tentrinity-carbon-icon-gold.png                               || { echo "::error::input/tentrinity-carbon-icon-gold.png is missing"; exit 1; }
+          test -f src/data/presentation.json                                          || { echo "::error::src/data/presentation.json is missing — Stage 2 not authored?"; exit 1; }
+          test -f src/data/motion-plan.json                                           || { echo "::error::src/data/motion-plan.json is missing"; exit 1; }
+          test -f src/data/scene-timings.json                                         || { echo "::error::src/data/scene-timings.json is missing"; exit 1; }
 
       - name: Install dependencies
         run: npm ci
 
       - name: Render
-        # @remotion/renderer downloads its Chromium binary on first invocation.
         run: npm run build-video
 
       - name: Upload final.mp4

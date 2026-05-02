@@ -13,7 +13,7 @@ export const Root: React.FC = () => {
   return (
     <>
       <Composition
-        id="Main"
+        id="AnimatedPresentation"
         component={Video}
         durationInFrames={durationInFrames}
         fps={fps}
