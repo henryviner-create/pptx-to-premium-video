@@ -3,33 +3,44 @@ import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
 import { theme } from '../theme';
 
 /**
- * Slow, drifting gradient + vignette + film grain feel.
- * Continuous across the whole timeline so cuts feel cinematic instead of slidey.
+ * Continuous background that drifts across the entire timeline.
+ *
+ * Three stacked layers:
+ *   1. A radial well that breathes from one corner to the other.
+ *   2. A faint gold wash that crosses the frame, heightening cuts without
+ *      ever reading as a transition itself.
+ *   3. An inner-shadow vignette that pulls focus to the type.
+ *
+ * Cuts must never feel like PowerPoint transitions — keeping this layer
+ * unbroken across scenes is the cheapest way to enforce that.
  */
 export const BackgroundField: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const t = frame / Math.max(1, durationInFrames);
-  const angle = 200 + t * 40;
-  const x = 50 + Math.sin(t * Math.PI * 2) * 8;
-  const y = 50 + Math.cos(t * Math.PI * 2) * 6;
+
+  // Slow, parallaxed drift.
+  const x = 50 + Math.sin(t * Math.PI * 2) * 9;
+  const y = 50 + Math.cos(t * Math.PI * 2 * 0.7) * 6;
+  const angle = 200 + t * 30;
 
   return (
     <>
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse at ${x}% ${y}%, ${theme.bgGradientA} 0%, ${theme.bgGradientB} 60%, ${theme.bg} 100%)`,
+          background: `radial-gradient(ellipse at ${x}% ${y}%, ${theme.bgGradientA} 0%, ${theme.bgGradientB} 62%, ${theme.bg} 100%)`,
         }}
       />
       <AbsoluteFill
         style={{
-          background: `linear-gradient(${angle}deg, rgba(124,196,255,0.06), rgba(244,194,122,0.04))`,
+          background: `linear-gradient(${angle}deg, ${theme.goldFaint}, rgba(0,0,0,0))`,
           mixBlendMode: 'screen',
+          opacity: 0.7,
         }}
       />
       <AbsoluteFill
         style={{
-          boxShadow: 'inset 0 0 360px 80px rgba(0,0,0,0.65)',
+          boxShadow: 'inset 0 0 360px 80px rgba(0,0,0,0.7)',
           pointerEvents: 'none',
         }}
       />

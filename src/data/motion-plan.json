@@ -1,0 +1,333 @@
+{
+  "$author": "claude (stage 2)",
+  "$generatedAt": "2026-05-02",
+  "$source": {
+    "presentation": "src/data/presentation.json",
+    "timings": "src/data/scene-timings.json"
+  },
+
+  "fps": 30,
+  "resolution": { "width": 1920, "height": 1080 },
+  "totalDurationSec": 708.206,
+  "sceneCount": 13,
+
+  "globalLanguage": {
+    "background": "Continuous BackgroundField across the entire timeline: drifting radial well + faint gold linear wash + vignette. Never resets between scenes — that is what stops the cuts feeling like PowerPoint transitions.",
+    "transitionStyle": "Cross-dissolve with a slow Ken Burns push (1.015 → 1.045 over the scene). Implemented in SceneFrame; every scene wraps in it.",
+    "transitionDurationFrames": 18,
+    "easing": "ease-out cubic on opacity; near-linear on scale.",
+    "audio": {
+      "src": "audio/master-voiceover.mp3",
+      "policy": "Played once across the whole video. Never split, never re-encoded, never per-scene."
+    },
+    "parallax": "BackgroundField sin/cos drift (period = full timeline) provides subtle parallax. Foreground scenes do not parallax independently — that would compete with the type."
+  },
+
+  "logoUsage": {
+    "rules": [
+      "Opening + closing scenes: TenTrinity Carbon horizontal-white at hero scale, centred. (Opening is currently NOT a logo scene — first scene is a statement; logo lands on closing only.)",
+      "Section dividers: icon-gold may be used very small if a divider scene is added. Currently no section dividers are scheduled.",
+      "Content scenes (clips 1–12): no logo. The brand carries through type, palette, and motion language.",
+      "Treatment: opacity fade-in only; never spin, bounce, glow, or scale-pop.",
+      "Maximum logo opacity: 0.95 (closing). Section icon: 0.7."
+    ],
+    "perScene": {
+      "scene-01": "none",
+      "scene-02": "none",
+      "scene-03": "none",
+      "scene-04": "none",
+      "scene-05": "none",
+      "scene-06": "none",
+      "scene-07": "none",
+      "scene-08": "none",
+      "scene-09": "none",
+      "scene-10": "none",
+      "scene-11": "none",
+      "scene-12": "none",
+      "scene-13": "horizontal-white at hero, fade-in over 27 frames, max opacity 0.95"
+    }
+  },
+
+  "typography": {
+    "display": "Inter / SF Pro Display / Helvetica Neue / system-ui",
+    "mono": "JetBrains Mono / SF Mono",
+    "sizes": {
+      "eyebrow": 22,
+      "captionMono": 26,
+      "subtitle": 38,
+      "body": 28,
+      "bullet": 44,
+      "title": 96,
+      "manifesto": 88,
+      "regionName": 96,
+      "regionMetric": 88,
+      "metricsRowFigure": 132,
+      "heroMetric": 360
+    },
+    "rules": [
+      "Anything below 24px reads as a slide deck, not a film — never use it for visible content.",
+      "Tabular numerals on every numeric figure (fontVariantNumeric: 'tabular-nums').",
+      "Letter-spacing is negative on display-weight type (-1 to -3) and positive on mono kickers (+4 to +8).",
+      "Line-height: 0.94–1.06 on display-weight; 1.18–1.4 on body."
+    ]
+  },
+
+  "pacing": {
+    "policy": "Scenes follow the 13 AAF Clip boundaries. Sentence-level cues drive in-scene reveal beats only — they never cause hard cuts.",
+    "minSceneSeconds": 26.88,
+    "maxSceneSeconds": 81.006,
+    "averageSceneSeconds": 54.477,
+    "longestSceneId": "scene-06",
+    "shortestSceneId": "scene-13",
+    "rules": [
+      "Title beat lands within the first 0.6s of each scene; everything else slots in around the cues.",
+      "Final beat of each scene resolves at least 0.6s before scene end so the cross-dissolve has room.",
+      "Hero metric (scene-11) holds ≥1.5s after count-up resolves.",
+      "Closing scene holds ≥7s on the three lines before the synchronous audio + visual fade."
+    ]
+  },
+
+  "transitions": {
+    "global": "SceneFrame cross-dissolve + slow Ken Burns. Default.",
+    "perScene": "All scenes use the global transition. There are no wipes, slides, peels, page-flips, or zoom-bursts. Anywhere.",
+    "outroFade": "Final 1.2–1.4s of scene-13 fades the visual; the master audio bed fades by the same envelope."
+  },
+
+  "metricsAnimation": {
+    "countUp": "Ease-out cubic from 0 to target. Duration ~1.6s. Values formatted with tabular numerals; prefix/suffix preserved (so '−16.3', '700K+', '$1.2B' stay intact).",
+    "delay": "Tied to the cue when the narrator says the figure. Default offset: 0.2s after scene start, then per-cue.",
+    "settle": "Final value holds with no further motion until the next beat or scene end."
+  },
+
+  "chartsAnimation": {
+    "policy": "No bar charts in this cut. Numerical comparisons are handled by MetricsScene (clip 4) and the hero MetricScene (clip 11). If a chart is added later, the rule is: bars and figures finish at the same frame — never staggered final values."
+  },
+
+  "scenes": [
+    {
+      "id": "scene-01",
+      "clipNumber": 1,
+      "type": "statement",
+      "weight": 1.2,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 18, "action": "title fades up; word stagger; gold rule travels left-to-right",   "easing": "spring-confident" },
+        { "atSec": 11.21, "durationFrames": 22, "action": "subtitle word-stagger reveals (cue: 'For institutional capital')","easing": "spring-soft" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out via SceneFrame",                              "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "subtitle": 11.21, "outro": "−0.6" },
+      "cinematicNotes": "Editorial open. Resist any motion below the type — the scene should read as a film opening, not as a slide.",
+      "useCues": [0, 1, 2, 3]
+    },
+    {
+      "id": "scene-02",
+      "clipNumber": 2,
+      "type": "manifesto",
+      "weight": 1.3,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "mono eyebrow fades in",                              "easing": "ease-out" },
+        { "atSec": 33.23, "durationFrames": 22, "action": "creed line 1 lands; gold rule travels in beside it", "easing": "spring-confident" },
+        { "atSec": 36.23, "durationFrames": 22, "action": "creed line 2 lands",                                 "easing": "spring-confident" },
+        { "atSec": 40.64, "durationFrames": 22, "action": "creed line 3 lands; longer hold",                    "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                                 "easing": "ease-out" }
+      ],
+      "revealTimings": { "eyebrow": 0.0, "line1": 33.23, "line2": 36.23, "line3": 40.64 },
+      "cinematicNotes": "Three creed lines. The narration lays them out in sequence — the visual matches that sequence beat-for-beat.",
+      "useCues": [0, 5, 6, 7]
+    },
+    {
+      "id": "scene-03",
+      "clipNumber": 3,
+      "type": "pillars",
+      "weight": 1.0,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                       "easing": "ease-out" },
+        { "atSec": 5.99,  "durationFrames": 24, "action": "pillar 01 (Direct measurement) lands", "easing": "spring-confident" },
+        { "atSec": 17.48, "durationFrames": 24, "action": "pillar 02 (Takaful permanence) lands", "easing": "spring-confident" },
+        { "atSec": 33.83, "durationFrames": 24, "action": "pillar 03 (Institutional integrity) lands","easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                  "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "pillar1": 5.99, "pillar2": 17.48, "pillar3": 33.83 },
+      "cinematicNotes": "Pillar reveals are timed to 'The first / second / third is…' cues. Resist crowding the second pillar against the first — the takaful row needs its own beat.",
+      "useCues": [0, 1, 2, 3, 5]
+    },
+    {
+      "id": "scene-04",
+      "clipNumber": 4,
+      "type": "metrics",
+      "weight": 1.2,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                              "easing": "ease-out" },
+        { "atSec": 11.31, "durationFrames": 42, "action": "metric 01 (700K+ ha) ease-out count-up",      "easing": "ease-out" },
+        { "atSec": 19.53, "durationFrames": 42, "action": "metric 02 (30M+) count-up",                   "easing": "ease-out" },
+        { "atSec": 29.59, "durationFrames": 42, "action": "metric 03 (100M+) count-up",                  "easing": "ease-out" },
+        { "atSec": 36.93, "durationFrames": 22, "action": "metric 04 (Lloyd's) lands as text, not number","easing": "spring-soft" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                          "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "m1": 11.31, "m2": 19.53, "m3": 29.59, "m4": 36.93 },
+      "cinematicNotes": "Each figure resolves on the cue word. Tabular numerals; never two figures animating at once.",
+      "useCues": [0, 2, 3, 4, 5]
+    },
+    {
+      "id": "scene-05",
+      "clipNumber": 5,
+      "type": "comparison",
+      "weight": 1.1,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                                "easing": "ease-out" },
+        { "atSec": 5.03,  "durationFrames": 30, "action": "left column (estimation-first) reveals, muted", "easing": "spring-soft" },
+        { "atSec": 37.67, "durationFrames": 30, "action": "right column (direct measurement) reveals, gold","easing": "spring-confident" },
+        { "atSec": 51.29, "durationFrames": 22, "action": "tail line beneath columns settles",             "easing": "ease-out" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                            "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "left": 5.03, "right": 37.67, "tail": 51.29 },
+      "cinematicNotes": "Left column is a deliberate slow read — the muted column is the 'before'. The right column lands on the cue 'TenTrinity Carbon takes a different approach' and inherits the gold accent.",
+      "useCues": [0, 1, 4, 8]
+    },
+    {
+      "id": "scene-06",
+      "clipNumber": 6,
+      "type": "pillars",
+      "weight": 1.0,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                                "easing": "ease-out" },
+        { "atSec": 20.86, "durationFrames": 24, "action": "Tabarru' row lands",                            "easing": "spring-confident" },
+        { "atSec": 38.17, "durationFrames": 24, "action": "Wakalah row lands",                             "easing": "spring-confident" },
+        { "atSec": 54.24, "durationFrames": 24, "action": "Mudarabah row lands",                           "easing": "spring-confident" },
+        { "atSec": 60.87, "durationFrames": 24, "action": "Lloyd's row lands",                             "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                            "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "tabarru": 20.86, "wakalah": 38.17, "mudarabah": 54.24, "lloyds": 60.87 },
+      "cinematicNotes": "Longest scene of the film (81.0s). Pace is the point — the four constructs need air. Use Arabic transliteration as the kicker for the first three rows; 'Lloyd's' anchors the last row in the operational world.",
+      "useCues": [0, 2, 3, 4, 5, 6]
+    },
+    {
+      "id": "scene-07",
+      "clipNumber": 7,
+      "type": "pillars",
+      "weight": 1.0,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                       "easing": "ease-out" },
+        { "atSec": 11.96, "durationFrames": 22, "action": "Din (Religion) reveals",               "easing": "spring-confident" },
+        { "atSec": 18.96, "durationFrames": 22, "action": "Nafs (Life) reveals",                  "easing": "spring-confident" },
+        { "atSec": 26.96, "durationFrames": 22, "action": "'Aql (Intellect) reveals",             "easing": "spring-confident" },
+        { "atSec": 33.96, "durationFrames": 22, "action": "Nasl (Lineage) reveals",               "easing": "spring-confident" },
+        { "atSec": 41.96, "durationFrames": 22, "action": "Mal (Wealth) reveals",                 "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                    "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "din": 11.96, "nafs": 18.96, "aql": 26.96, "nasl": 33.96, "mal": 41.96 },
+      "cinematicNotes": "Five protections is the ceiling. Each row tight — kicker / label / one body line. Cues fall roughly every 7–8s in the middle of clip 7.",
+      "useCues": [0, 1, 4]
+    },
+    {
+      "id": "scene-08",
+      "clipNumber": 8,
+      "type": "pillars",
+      "weight": 0.95,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                       "easing": "ease-out" },
+        { "atSec": 12.75, "durationFrames": 22, "action": "row 01 (Measurement) reveals",         "easing": "spring-confident" },
+        { "atSec": 21.46, "durationFrames": 22, "action": "row 02 (Risk transfer) reveals",       "easing": "spring-confident" },
+        { "atSec": 27.46, "durationFrames": 22, "action": "row 03 (Governance) reveals",          "easing": "spring-confident" },
+        { "atSec": 46.47, "durationFrames": 22, "action": "row 04 (Documentation) reveals",       "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                   "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "r1": 12.75, "r2": 21.46, "r3": 27.46, "r4": 46.47 },
+      "cinematicNotes": "Row 03 (governance) carries the most words — keep its sub-line tight: 'Shariah oversight aligned with AAOIFI and IFSB.' Don't add the carbon-market frameworks line on screen; the narration covers it.",
+      "useCues": [0, 1, 2, 3, 4]
+    },
+    {
+      "id": "scene-09",
+      "clipNumber": 9,
+      "type": "comparison",
+      "weight": 1.0,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                                       "easing": "ease-out" },
+        { "atSec": 5.35,  "durationFrames": 28, "action": "left column (high-integrity credit) reveals, accent",  "easing": "spring-confident" },
+        { "atSec": 32.87, "durationFrames": 28, "action": "right column (tokenised) reveals, accent",             "easing": "spring-confident" },
+        { "atSec": 60.39, "durationFrames": 22, "action": "tail line ('not a separate cryptocurrency exposure')", "easing": "ease-out" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                                   "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "left": 5.35, "right": 32.87, "tail": 60.39 },
+      "cinematicNotes": "Both columns gold-accented. The narration's pivot at ~33s is the cue for the right column. The tail line is essential — it draws the boundary with crypto.",
+      "useCues": [0, 1, 3, 5]
+    },
+    {
+      "id": "scene-10",
+      "clipNumber": 10,
+      "type": "portfolio",
+      "weight": 1.0,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                                "easing": "ease-out" },
+        { "atSec": 5.19,  "durationFrames": 28, "action": "Shabunda (left) region reveals",                "easing": "spring-confident" },
+        { "atSec": 25.09, "durationFrames": 28, "action": "Gabon (right) region reveals; gold rule travels in vertically", "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                            "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "shabunda": 5.19, "gabon": 25.09 },
+      "cinematicNotes": "No literal map. Restraint reads as confidence at this register. Coordinates in mono caption are sufficient.",
+      "useCues": [0, 1, 4, 5]
+    },
+    {
+      "id": "scene-11",
+      "clipNumber": 11,
+      "type": "metric",
+      "weight": 1.4,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 16, "action": "eyebrow fades in; gold rule travels",            "easing": "ease-out" },
+        { "atSec": 8.85,  "durationFrames": 48, "action": "hero number ease-out count-up to −16.3",         "easing": "ease-out" },
+        { "atSec": 20.35, "durationFrames": 22, "action": "caption reveals beneath the number",              "easing": "spring-soft" },
+        { "atSec": 45.06, "durationFrames": 22, "action": "tail line ('measured 2001–2023') settles",        "easing": "ease-out" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                              "easing": "ease-out" }
+      ],
+      "revealTimings": { "eyebrow": 0.0, "number": 8.85, "caption": 20.35, "tail": 45.06 },
+      "cinematicNotes": "The single most important visual moment. Number is the picture. Hold the final value for at least 1.5s before any other motion. Negative sign uses the proper Unicode minus (−).",
+      "useCues": [0, 1, 4]
+    },
+    {
+      "id": "scene-12",
+      "clipNumber": 12,
+      "type": "pillars",
+      "weight": 0.9,
+      "beats": [
+        { "atSec": 0.0,   "durationFrames": 14, "action": "title fades up",                       "easing": "ease-out" },
+        { "atSec": 4.0,   "durationFrames": 22, "action": "row 01 (Spot) reveals",                "easing": "spring-confident" },
+        { "atSec": 9.0,   "durationFrames": 22, "action": "row 02 (Forward) reveals",             "easing": "spring-confident" },
+        { "atSec": 14.0,  "durationFrames": 22, "action": "row 03 (Strategic) reveals",           "easing": "spring-confident" },
+        { "atSec": 19.0,  "durationFrames": 22, "action": "row 04 (Structured) reveals",          "easing": "spring-confident" },
+        { "atSec": -0.6,  "durationFrames": 18, "action": "cross-dissolve out",                   "easing": "ease-out" }
+      ],
+      "revealTimings": { "title": 0.0, "r1": 4.0, "r2": 9.0, "r3": 14.0, "r4": 19.0 },
+      "cinematicNotes": "Brisker pacing — the narration is dense. Reveals every ~5s; the closing line gets the rest of the scene's tail.",
+      "useCues": [0, 1]
+    },
+    {
+      "id": "scene-13",
+      "clipNumber": 13,
+      "type": "closing",
+      "weight": 1.3,
+      "beats": [
+        { "atSec": 0.2,   "durationFrames": 27, "action": "horizontal-white logo fades in at hero scale", "easing": "ease-out" },
+        { "atSec": 1.5,   "durationFrames": 18, "action": "gold rule scales horizontally beneath logo",   "easing": "ease-out" },
+        { "atSec": 13.41, "durationFrames": 22, "action": "line 1 ('Direct measurement.') lands",         "easing": "spring-confident" },
+        { "atSec": 14.97, "durationFrames": 22, "action": "line 2 ('Takaful permanence.') lands",          "easing": "spring-confident" },
+        { "atSec": 17.91, "durationFrames": 22, "action": "line 3 ('Institutional integrity.') lands",     "easing": "spring-confident" },
+        { "atSec": -1.4,  "durationFrames": 42, "action": "synchronous fade-out: visual + audio bed",      "easing": "ease-in-out" }
+      ],
+      "revealTimings": { "logo": 0.2, "rule": 1.5, "line1": 13.41, "line2": 14.97, "line3": 17.91, "outro": "−1.4" },
+      "cinematicNotes": "Longest hold of the film, in real terms relative to its 26.9s span. The logo is the only graphic element. Ends with simultaneous audio and visual fade — the master voiceover never gets a hard cut.",
+      "useCues": [0, 1, 2, 3]
+    }
+  ],
+
+  "avoid": [
+    "PowerPoint slide-flipping or page-peel transitions.",
+    "Basic fade-and-cut slide transitions.",
+    "Spinning, bouncing, elastic springs, or any toy motion.",
+    "Glowing or strobing logo treatments.",
+    "Clipart, stickers, emoji, generic SaaS template visuals.",
+    "More than 6 bullets on screen at once.",
+    "Tiny copy. Anything below 24px reads as a slide deck.",
+    "Showing the original PowerPoint screenshot as the main video.",
+    "Per-scene wipes / slides / peels / dissolves other than the global cross-dissolve.",
+    "Watermarking the logo on every frame."
+  ]
+}

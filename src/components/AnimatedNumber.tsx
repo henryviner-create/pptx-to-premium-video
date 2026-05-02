@@ -49,15 +49,20 @@ export const AnimatedNumber: React.FC<Props> = ({
 
 function formatCurrent(current: number, target: number, display?: string): string {
   if (!display) return formatNumber(current, target);
-  const match = display.match(/(-?\d[\d,]*(?:\.\d+)?)/);
+  // Match either ASCII hyphen-minus or Unicode minus (U+2212) before the digit.
+  const match = display.match(/([-−]?\d[\d,]*(?:\.\d+)?)/);
   if (!match) return display;
   const numericStr = match[1];
+  // Preserve the sign character the designer chose (Unicode minus reads
+  // typographically tighter at hero sizes).
+  const useUnicodeMinus = display.includes('−');
   const decimals = (numericStr.split('.')[1] ?? '').length;
-  const formatted = current.toLocaleString('en-US', {
+  const magnitude = Math.abs(current).toLocaleString('en-US', {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   });
-  return display.replace(numericStr, formatted);
+  const sign = current < 0 ? (useUnicodeMinus ? '−' : '-') : '';
+  return display.replace(numericStr, `${sign}${magnitude}`);
 }
 
 function formatNumber(current: number, target: number): string {

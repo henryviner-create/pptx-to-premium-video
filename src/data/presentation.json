@@ -1,0 +1,532 @@
+{
+  "$author": "claude (stage 2)",
+  "$generatedAt": "2026-05-02",
+  "$source": {
+    "deck": "input/deck.pptx",
+    "voiceover": "input/master-voiceover.mp3",
+    "transcript": "input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt",
+    "extracted": "src/data/pptx-extracted.json",
+    "timings": "src/data/scene-timings.json"
+  },
+  "brand": {
+    "name": "TenTrinity Carbon",
+    "voice": "Apple keynote meets premium institutional investor film. Confident, quiet, evidence-led. Lets the type and the numbers do the talking.",
+    "palette": {
+      "bg": "#07090c",
+      "ink": "#f3eee2",
+      "inkSoft": "rgba(243, 238, 226, 0.68)",
+      "gold": "#c9a86a",
+      "goldStrong": "#d8b878"
+    },
+    "typography": {
+      "display": "Inter / SF Pro Display",
+      "mono": "JetBrains Mono"
+    },
+    "logoFiles": {
+      "horizontalWhite": "logos/tentrinity-carbon-horizontal-white.png",
+      "horizontalGold": "logos/tentrinity-carbon-horizontal-gold.png",
+      "iconGold": "logos/tentrinity-carbon-icon-gold.png",
+      "iconGoldWhite": "logos/tentrinity-carbon-icon-gold-white.png",
+      "iconGoldLightgrey": "logos/tentrinity-carbon-icon-gold-lightgrey.png"
+    }
+  },
+  "visualDirection": {
+    "referenceMood": "Apple keynote meets institutional investor film.",
+    "do": [
+      "Dark premium backgrounds with restrained gold accents.",
+      "Editorial typography at hero scale (96–360px) with strong negative space.",
+      "Cross-dissolve and slow Ken Burns between every scene.",
+      "Animated metrics with ease-out count-ups; tabular numerals.",
+      "Word- and item-level reveals at confident springs (damping ≥ 18).",
+      "Use far fewer on-screen words than the source deck — let the narration carry detail."
+    ],
+    "avoid": [
+      "Showing PowerPoint slides as the picture.",
+      "Per-slide hard cuts or page-flip / wipe / peel transitions.",
+      "Spinning, bouncing, glowing, or otherwise gimmicky motion.",
+      "Clipart, icon stock, generic SaaS template visuals.",
+      "Dense bullet lists; never more than 6 items on screen.",
+      "Watermark-style logo stamping on every frame."
+    ]
+  },
+  "logoUsage": {
+    "opening": "horizontal-white at hero scale, fades in slowly",
+    "closing": "horizontal-white at hero scale, fades in slowly",
+    "sectionDividers": "icon-gold, very small, optional",
+    "contentScenes": "no logo",
+    "treatment": "Restrained motion only: fade-in over 18–28 frames; never spin, bounce, or glow."
+  },
+  "audio": {
+    "src": "audio/master-voiceover.mp3",
+    "policy": "Played once across the whole video. Never split, never re-encoded, never per-scene."
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "clipNumber": 1,
+      "type": "statement",
+      "title": "Voluntary carbon has a structural problem.",
+      "onScreenText": "For institutional capital — and especially capital that must meet Shariah principles — this is not a matter of taste. It is a matter of compliance.",
+      "sourceSlide": 1,
+      "startSec": 0.0,
+      "endSec": 27.167,
+      "durationSec": 27.167,
+      "voiceover": "Voluntary carbon has a structural problem. The credits trade on credibility, but the methodology that produces them often does not bear close inspection. For institutional capital, and especially for capital that must meet the principles of Shariah, this is not a matter of taste. It is a matter of compliance.",
+      "cues": [
+        { "atSec": 0.0,    "text": "Voluntary carbon has a structural problem.",            "purpose": "title fades up; gold rule travels left-to-right" },
+        { "atSec": 11.21,  "text": "For institutional capital…",                            "purpose": "subtitle word-stagger reveals" },
+        { "atSec": 23.13,  "text": "It is a matter of compliance.",                         "purpose": "subtitle settles; cross-dissolve out begins ~0.6s later" }
+      ],
+      "visualDirection": "Editorial open. Hero title at ~96px in warm off-white. Subtitle in inkSoft, lower in the frame. A single gold rule beneath. No imagery, no logo. Slow Ken Burns; lets the line breathe.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Voluntary carbon has a structural problem.",
+        "subtitle": "For institutional capital — especially capital that must meet Shariah — this is a matter of compliance, not taste."
+      }
+    },
+    {
+      "id": "scene-02",
+      "clipNumber": 2,
+      "type": "manifesto",
+      "title": "Direct measurement removes gharar from the credit.",
+      "onScreenText": "Three lines: credit / protection / standard.",
+      "sourceSlide": 2,
+      "startSec": 27.167,
+      "endSec": 68.807,
+      "durationSec": 41.640,
+      "voiceover": "TenTrinity Carbon was built to address it. Two principal sources of gharar sit at the heart of voluntary carbon as it is conventionally structured. The first is the credit itself, where modelled estimates substitute for measured outcomes. The second is the protection mechanism, where conventional buffer pools and indemnity insurance carry their own structural concerns under Islamic finance. Both must be addressed. Direct measurement removes gharar from the credit. Takaful removes it from the protection. Together, they form the standard.",
+      "cues": [
+        { "atSec": 0.0,   "text": "TenTrinity Carbon was built to address it.",                                "purpose": "eyebrow fades in" },
+        { "atSec": 33.23, "text": "Direct measurement removes gharar from the credit.",                       "purpose": "first creed line lands with gold rule" },
+        { "atSec": 36.23, "text": "Takaful removes it from the protection.",                                  "purpose": "second creed line lands" },
+        { "atSec": 40.64, "text": "Together, they form the standard.",                                        "purpose": "third line; slight extra hold; cross-dissolve out" }
+      ],
+      "visualDirection": "Manifesto reveal. Mono eyebrow up top, three editorial creed lines stacked, each preceded by a short gold rule that travels in beside it. No imagery, no list bullets. Confident springs. The third line gets the longest hold.",
+      "logoUsage": "none",
+      "props": {
+        "eyebrow": "TenTrinity Carbon  /  Manifesto",
+        "lines": [
+          "Direct measurement removes gharar from the credit.",
+          "Takaful removes it from the protection.",
+          "Together, they form the standard."
+        ]
+      }
+    },
+    {
+      "id": "scene-03",
+      "clipNumber": 3,
+      "type": "pillars",
+      "title": "Three pillars.",
+      "onScreenText": "Direct measurement. Takaful permanence. Institutional integrity.",
+      "sourceSlide": 3,
+      "startSec": 68.807,
+      "endSec": 127.242,
+      "durationSec": 58.435,
+      "voiceover": "Three pillars hold the framework together. The first is direct measurement: crediting anchored to the actual measurement of atmospheric carbon flux, not to modelled approximations. The second is takaful permanence: cooperative risk transfer through a mutually owned pool structured under wakalah-mudarabah principles, with capacity sourced from Lloyd's syndicate participation via Shariah-compliant fronting. The third is institutional integrity: continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary, applied at every stage from origination to distribution.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Three pillars hold the framework together.",         "purpose": "title in" },
+        { "atSec": 5.99,  "text": "The first is direct measurement…",                   "purpose": "pillar 01 reveals with gold rule" },
+        { "atSec": 17.48, "text": "The second is takaful permanence…",                  "purpose": "pillar 02 reveals" },
+        { "atSec": 33.83, "text": "The third is institutional integrity…",              "purpose": "pillar 03 reveals" },
+        { "atSec": 53.83, "text": "It is how the platform was built.",                  "purpose": "settle; cross-dissolve out" }
+      ],
+      "visualDirection": "Three numbered pillars stacked vertically. Each pillar reveals as the narrator names it (cues drive the timing). Gold mono kicker (01/02/03), short label in display weight, body in inkSoft. No imagery.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Three pillars.",
+        "subtitle": "A framework built into the platform — not added after the fact.",
+        "items": [
+          {
+            "index": "01",
+            "label": "Direct measurement.",
+            "body": "Crediting anchored to the actual measurement of atmospheric carbon flux — not modelled approximations."
+          },
+          {
+            "index": "02",
+            "label": "Takaful permanence.",
+            "body": "Cooperative risk transfer through a Wakalah-Mudarabah pool, with Lloyd's syndicate capacity via Shariah-compliant fronting."
+          },
+          {
+            "index": "03",
+            "label": "Institutional integrity.",
+            "body": "Continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary."
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene-04",
+      "clipNumber": 4,
+      "type": "metrics",
+      "title": "Built at scale.",
+      "onScreenText": "700K+ ha · 30M+ Shabunda · 100M+ Gabon · Lloyd's-fronted.",
+      "sourceSlide": 4,
+      "startSec": 127.242,
+      "endSec": 176.744,
+      "durationSec": 49.502,
+      "voiceover": "Scale has long been the missing ingredient in voluntary carbon. High-integrity supply, at the volumes institutional buyers require, has remained scarce. TenTrinity Carbon holds authorised access to roughly seven hundred thousand hectares of forest under management. The flagship project, Shabunda, in the Democratic Republic of the Congo, has more than thirty million credits available immediately. The forward pipeline in Gabon represents a hundred million credits or more. The protection layer is sourced through Lloyd's syndicate capacity. The platform is not theoretical. It is operational, at the scale institutional capital requires.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Scale has long been the missing ingredient…",  "purpose": "title in" },
+        { "atSec": 11.31, "text": "…seven hundred thousand hectares…",            "purpose": "metric 01 counts up" },
+        { "atSec": 19.53, "text": "Shabunda… more than thirty million credits…",   "purpose": "metric 02 counts up" },
+        { "atSec": 29.59, "text": "The forward pipeline in Gabon…",               "purpose": "metric 03 counts up" },
+        { "atSec": 36.93, "text": "Lloyd's syndicate capacity.",                  "purpose": "metric 04 lands; tabular numerals settle together" }
+      ],
+      "visualDirection": "Four headline metrics in a row. Each figure ease-out counts up; the caption beneath stays small. Gold rule travels in above each metric as it lands. Hero scale on the figures, tabular numerals throughout. No charts, no chrome.",
+      "logoUsage": "none",
+      "keyMetrics": [
+        { "raw": "700K+ ha",  "value": 700,  "context": "authorised access to forest under management" },
+        { "raw": "30M+",      "value": 30,   "context": "Shabunda credits, immediate availability" },
+        { "raw": "100M+",     "value": 100,  "context": "Gabon credits, forward delivery" },
+        { "raw": "Lloyd's",   "value": 0,    "context": "syndicate capacity for protection" }
+      ],
+      "props": {
+        "title": "Built at scale.",
+        "subtitle": "High-integrity supply, at the volumes institutional buyers require.",
+        "metrics": [
+          { "display": "700K+", "value": 700, "caption": "hectares · authorised area" },
+          { "display": "30M+",  "value": 30,  "caption": "credits · Shabunda · immediate" },
+          { "display": "100M+", "value": 100, "caption": "credits · Gabon · forward" },
+          { "display": "Lloyd's", "value": 0, "caption": "syndicate capacity · Performance Takaful" }
+        ],
+        "footnote": "Operational, not theoretical."
+      }
+    },
+    {
+      "id": "scene-05",
+      "clipNumber": 5,
+      "type": "comparison",
+      "title": "From estimation to measurement.",
+      "onScreenText": "Estimation-first → Direct measurement.",
+      "sourceSlide": 5,
+      "startSec": 176.744,
+      "endSec": 243.853,
+      "durationSec": 67.109,
+      "voiceover": "Methodology is where the contrast becomes most apparent. The dominant approach in nature-based credits is estimation-first: modelled baselines, counterfactual scenarios, infrequent sampling extrapolated over long monitoring periods, biomass estimates that do not reflect what is actually happening on the ground today. This is where the methodology debate sits. Under fiqh, it is also where the gharar exposure is highest. TenTrinity Carbon takes a different approach. Atmospheric carbon flux is measured continuously, not inferred. Observation is calibrated to physical frameworks. Ground-based validation anchors performance to reality. The result is a credit that is materially defensible, to Shariah scholars, to auditors, and to procurement committees alike. The protection mechanism follows the same logic.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Methodology is where the contrast becomes most apparent.", "purpose": "title in" },
+        { "atSec": 5.03,  "text": "The dominant approach…",                                    "purpose": "left column reveals (muted)" },
+        { "atSec": 37.67, "text": "TenTrinity Carbon takes a different approach.",            "purpose": "right column reveals (gold accent)" },
+        { "atSec": 51.29, "text": "Materially defensible — to scholars, auditors, committees.","purpose": "tail line beneath columns" }
+      ],
+      "visualDirection": "Two-column comparison. Left column 'estimation-first' rendered in inkSoft, modelled / counterfactual / biomass listed beneath. A small gold arrow between columns. Right column 'direct measurement' rendered in full ink + gold accent. Right column reveals second, after the narrator says 'TenTrinity Carbon takes a different approach.'",
+      "logoUsage": "none",
+      "props": {
+        "title": "From estimation to measurement.",
+        "subtitle": "The methodology debate, settled by direct evidence.",
+        "left": {
+          "kicker": "Estimation-first",
+          "label": "Modelled baselines.",
+          "tone": "muted",
+          "items": [
+            "Counterfactual scenarios.",
+            "Infrequent sampling, extrapolated.",
+            "Biomass estimates, not measured outcomes."
+          ]
+        },
+        "right": {
+          "kicker": "Direct measurement",
+          "label": "Atmospheric flux, measured.",
+          "tone": "accent",
+          "items": [
+            "Continuous, not inferred.",
+            "Calibrated to physical frameworks.",
+            "Ground-based validation anchors reality."
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene-06",
+      "clipNumber": 6,
+      "type": "pillars",
+      "title": "Takaful permanence.",
+      "onScreenText": "Tabarru'. Wakalah. Mudarabah. Lloyd's.",
+      "sourceSlide": 6,
+      "startSec": 243.853,
+      "endSec": 324.859,
+      "durationSec": 81.006,
+      "voiceover": "Conventional voluntary carbon relies on buffer pools, credits set aside against risk, and indemnity-assurance mechanisms carried by insurance providers. Both raise structural concerns under Islamic finance. In their place, permanence is supported through takaful: a cooperative risk pool, backed by participants, operating under a classical structure. The donation-based contribution to the pool follows a wakalah agency arrangement, under which the operator manages the pool and earns an agreed fee. Mudarabah provides the profit-sharing structure. The credit is supported through Lloyd's syndicate participation via Shariah-compliant fronting and dedicated retakaful support. The structure functions as protection, but not as conventional insurance.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Conventional voluntary carbon relies on buffer pools…",        "purpose": "title in (the rejection of buffer pools is implied — title states the alternative)" },
+        { "atSec": 20.86, "text": "…cooperative risk pool, classical structure.",                 "purpose": "Tabarru' reveals" },
+        { "atSec": 38.17, "text": "…wakalah agency arrangement…",                                  "purpose": "Wakalah reveals" },
+        { "atSec": 54.24, "text": "Mudarabah provides the profit-sharing structure.",              "purpose": "Mudarabah reveals" },
+        { "atSec": 60.87, "text": "Lloyd's syndicate participation…",                              "purpose": "Lloyd's row reveals" },
+        { "atSec": 72.78, "text": "Protection, but not conventional insurance.",                   "purpose": "subtitle settles; cross-dissolve out" }
+      ],
+      "visualDirection": "Four named structures revealed sequentially as the narrator introduces each. Mono kicker carries the Arabic term in italic display; body in inkSoft. The final 'Lloyd's' row reads as the operational backstop. Long scene — pace the reveals to the cues, don't crowd them.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Takaful permanence.",
+        "subtitle": "Cooperative protection, structured for fiqh.",
+        "items": [
+          {
+            "index": "Tabarru'",
+            "label": "Donation to the pool.",
+            "body": "Participants contribute on a tabarru' basis. The pool, not an insurer, bears the risk."
+          },
+          {
+            "index": "Wakalah",
+            "label": "Agency, with a fee.",
+            "body": "The operator manages the pool under a wakalah arrangement and earns an agreed fee."
+          },
+          {
+            "index": "Mudarabah",
+            "label": "Profit-sharing.",
+            "body": "Investment returns on the pool flow back through a mudarabah structure."
+          },
+          {
+            "index": "Lloyd's",
+            "label": "Syndicate participation.",
+            "body": "Capacity sourced via Shariah-compliant fronting and dedicated retakaful support."
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene-07",
+      "clipNumber": 7,
+      "type": "pillars",
+      "title": "Aligned to the Maqasid.",
+      "onScreenText": "Religion. Life. Intellect. Lineage. Wealth.",
+      "sourceSlide": 7,
+      "startSec": 324.859,
+      "endSec": 389.825,
+      "durationSec": 64.966,
+      "voiceover": "Beyond the contractual mechanics lies the question often left unanswered: whether the underlying activity that actually stands as the object is also Shariah-aligned. Viewed through the objectives of Shariah, the case is unusually strong: the protection of religion through stewardship of the natural order; the protection of life, given climate stability is linked to human health; the protection of intellect, by anchoring methodology in science rather than conjecture; the protection of lineage through ecosystem preservation for future generations; and the protection of wealth through direct ownership of identifiable real assets, rather than synthetic exposure. The measured credit is treated as a real asset, and the forest as a living environmental asset. This is not theological branding. It is the logic of the business.",
+      "cues": [
+        { "atSec": 0.0,   "text": "…whether the underlying activity is Shariah-aligned.",  "purpose": "title in" },
+        { "atSec": 11.96, "text": "Religion — stewardship of the natural order.",          "purpose": "Din reveals" },
+        { "atSec": 18.96, "text": "Life — climate stability supports human health.",       "purpose": "Nafs reveals" },
+        { "atSec": 26.96, "text": "Intellect — methodology anchored in science.",          "purpose": "'Aql reveals" },
+        { "atSec": 33.96, "text": "Lineage — ecosystem preservation for future generations.","purpose": "Nasl reveals" },
+        { "atSec": 41.96, "text": "Wealth — direct ownership of real assets.",             "purpose": "Mal reveals" },
+        { "atSec": 60.68, "text": "It is the logic of the business.",                      "purpose": "settle; cross-dissolve out" }
+      ],
+      "visualDirection": "Five named protections revealed in sequence. Use the Arabic transliteration as the gold mono kicker (Din / Nafs / 'Aql / Nasl / Mal), with the English label and a single sentence beneath. Five items is the upper bound — keep each row tight.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Aligned to the Maqasid.",
+        "subtitle": "Five protections, satisfied directly.",
+        "items": [
+          { "index": "Din",   "label": "Religion.",   "body": "Stewardship (khilafah) of the natural order." },
+          { "index": "Nafs",  "label": "Life.",       "body": "Climate stability supports human life and health." },
+          { "index": "'Aql", "label": "Intellect.",  "body": "Methodology grounded in measurement, not conjecture." },
+          { "index": "Nasl",  "label": "Lineage.",    "body": "Ecosystem preservation for future generations." },
+          { "index": "Mal",   "label": "Wealth.",     "body": "Direct ownership of identifiable real assets." }
+        ]
+      }
+    },
+    {
+      "id": "scene-08",
+      "clipNumber": 8,
+      "type": "pillars",
+      "title": "Institutional grade.",
+      "onScreenText": "Measurement. Risk transfer. Governance. Documentation.",
+      "sourceSlide": 8,
+      "startSec": 389.825,
+      "endSec": 451.004,
+      "durationSec": 61.179,
+      "voiceover": "The institutional framework then adds the tests that make the capital allocation defensible. Direct measurement and verification are conducted under recognised carbon-market standards. Risk transfer is handled through takaful. Governance is carried through Shariah oversight and independent supervisory-board standards, aligned with AAOIFI, IFSB, and recognised carbon-market frameworks. Each test is documented. Together, they are what make the platform institutional-grade rather than promotional.",
+      "cues": [
+        { "atSec": 0.0,   "text": "The institutional framework adds the tests…",     "purpose": "title in" },
+        { "atSec": 12.75, "text": "Direct measurement and verification.",           "purpose": "row 01 reveals" },
+        { "atSec": 21.46, "text": "Risk transfer through takaful.",                 "purpose": "row 02 reveals" },
+        { "atSec": 27.46, "text": "Governance — AAOIFI, IFSB, carbon frameworks.",  "purpose": "row 03 reveals" },
+        { "atSec": 46.47, "text": "Each test is documented.",                       "purpose": "row 04 reveals" },
+        { "atSec": 53.65, "text": "Institutional-grade, not promotional.",          "purpose": "settle; cross-dissolve out" }
+      ],
+      "visualDirection": "Four numbered tests stacked vertically. Each row has a short display label and a single body line beneath. The last row 'Documentation' is the closer — slightly longer hold before cross-dissolve.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Institutional grade.",
+        "subtitle": "The tests that make the allocation defensible.",
+        "items": [
+          { "index": "01", "label": "Direct measurement & verification.", "body": "Conducted under recognised carbon-market standards." },
+          { "index": "02", "label": "Risk transfer.",                     "body": "Handled through takaful, not conventional insurance." },
+          { "index": "03", "label": "Governance.",                        "body": "Shariah oversight aligned with AAOIFI and IFSB." },
+          { "index": "04", "label": "Documentation.",                     "body": "Every test documented; nothing taken on trust." }
+        ]
+      }
+    },
+    {
+      "id": "scene-09",
+      "clipNumber": 9,
+      "type": "comparison",
+      "title": "Two product categories.",
+      "onScreenText": "High-integrity credit. Tokenised credit.",
+      "sourceSlide": 9,
+      "startSec": 451.004,
+      "endSec": 519.497,
+      "durationSec": 68.493,
+      "voiceover": "TenTrinity Carbon then uses two product categories from this structure. The first is the high-integrity carbon credit itself: one tonne of CO2 equivalent avoided or sequestered, independently verified and issued in ex-post form, where the environmental effect is recognised as a tradable unit. It is not merely the sale of an intangible right without substance. The second is the same credit rendered into tokenised form, where tokenisation functions as institutional infrastructure: traceability, portability, and settlement efficiency. It aligns with the asset-backed direction described in modern Shariah standards on tokenisation. In this context, tokenisation is not a separate cryptocurrency exposure.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Two product categories from this structure.",     "purpose": "title in" },
+        { "atSec": 5.35,  "text": "The high-integrity carbon credit itself…",        "purpose": "left column reveals" },
+        { "atSec": 32.87, "text": "The same credit rendered into tokenised form…",  "purpose": "right column reveals" },
+        { "atSec": 60.39, "text": "Not a separate cryptocurrency exposure.",         "purpose": "tail line; cross-dissolve out" }
+      ],
+      "visualDirection": "Two-column compare. Both columns get full ink — there is no 'old vs new' here, just two complementary forms of the same underlying asset. Gold accent on the right column to imply the tokenisation step is the forward-looking layer. Tail line beneath clarifies the boundary with crypto.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Two categories. One asset.",
+        "subtitle": "The tokenised form is institutional infrastructure — not a separate cryptocurrency exposure.",
+        "left": {
+          "kicker": "01  /  High-integrity",
+          "label": "1 tCO2e, ex-post.",
+          "tone": "accent",
+          "items": [
+            "Avoided or sequestered.",
+            "Independently verified.",
+            "Tradable environmental unit."
+          ]
+        },
+        "right": {
+          "kicker": "02  /  Tokenised",
+          "label": "Same credit, cleaner rails.",
+          "tone": "accent",
+          "items": [
+            "Traceability.",
+            "Portability.",
+            "Settlement efficiency."
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene-10",
+      "clipNumber": 10,
+      "type": "portfolio",
+      "title": "The active portfolio.",
+      "onScreenText": "Shabunda · DRC. Gabon · Coastal forest.",
+      "sourceSlide": 10,
+      "startSec": 519.497,
+      "endSec": 569.887,
+      "durationSec": 50.390,
+      "voiceover": "It is the same underlying credit, made operationally cleaner. The project anchor of the active portfolio is Shabunda, in the Democratic Republic of the Congo. It is the flagship asset. It sits in the Congo Basin, around two degrees south and twenty-seven degrees east, with thirty million credits available immediately. The multi-decade pipeline behind it includes a Gabon project on the equator, in the coastal forest system. It is a forward-delivery asset sized at over a hundred million credits, structured in alignment with Shariah-compliant frameworks.",
+      "cues": [
+        { "atSec": 0.0,   "text": "Same underlying credit, made operationally cleaner.", "purpose": "title in" },
+        { "atSec": 5.19,  "text": "Shabunda, DRC, Congo Basin…",                          "purpose": "left region (Shabunda) reveals" },
+        { "atSec": 25.09, "text": "Gabon… coastal forest system…",                       "purpose": "right region (Gabon) reveals" },
+        { "atSec": 39.93, "text": "Designed to produce credits under the standard.",     "purpose": "settle; cross-dissolve out" }
+      ],
+      "visualDirection": "Two regions side by side, divided by a thin gold rule that travels in vertically as Gabon enters the frame. Each region: mono kicker (FLAGSHIP / PIPELINE), place name in display, country/system in inkSoft, coordinates in mono caption, headline metric, sub-caption. No map illustration — the type and coordinates carry it.",
+      "logoUsage": "none",
+      "mapInstruction": "No literal map. Coordinates rendered in mono uppercase as a caption beneath each region — restraint reads as confidence; a map would feel infographic.",
+      "props": {
+        "title": "The active portfolio.",
+        "subtitle": "Flagship in production. Forward pipeline already structured.",
+        "regions": [
+          {
+            "kicker": "Flagship  ·  Active",
+            "name": "Shabunda",
+            "context": "Democratic Republic of the Congo · Congo Basin",
+            "coordinates": "02° S  ·  27° E",
+            "metric": "30M+",
+            "metricCaption": "credits  ·  immediate availability"
+          },
+          {
+            "kicker": "Pipeline  ·  Forward",
+            "name": "Gabon",
+            "context": "Coastal forest system · Equator",
+            "coordinates": "00°  ·  09° E",
+            "metric": "100M+",
+            "metricCaption": "credits  ·  forward delivery"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene-11",
+      "clipNumber": 11,
+      "type": "metric",
+      "title": "−16.3 tCO₂ ha⁻¹ yr⁻¹",
+      "onScreenText": "Mean annual net ecosystem exchange.",
+      "sourceSlide": 11,
+      "startSec": 569.887,
+      "endSec": 627.722,
+      "durationSec": 57.835,
+      "voiceover": "The single most important data point is this: Shabunda's mean annual net ecosystem exchange, derived from measurement, is approximately minus 16.3 tonnes of CO2 equivalent per hectare per year. The figure is negative because the forest is removing carbon from the atmosphere. The quarterly distribution reveals seasonality, with [unclear] marking the peak of net flux into the system. This is not a modelled output. It is measured data over the composite period from 2001 to 2023, forming the evidence base behind the credit.",
+      "cues": [
+        { "atSec": 0.0,   "text": "The single most important data point is this:",        "purpose": "eyebrow lands; gold rule travels" },
+        { "atSec": 8.85,  "text": "minus sixteen point three…",                            "purpose": "hero number ease-out count-up to terminus" },
+        { "atSec": 20.35, "text": "Negative because the forest removes carbon.",          "purpose": "caption reveals beneath the number" },
+        { "atSec": 45.06, "text": "Measured 2001 to 2023.",                                "purpose": "tail clarifies provenance" }
+      ],
+      "visualDirection": "Hero metric. Number is the entire picture. −16.3 at ~360px, ease-out count-up over ~1.6s. Gold mono eyebrow above ('MEAN ANNUAL · NET ECOSYSTEM EXCHANGE'). Units in mono uppercase below the figure. Caption in inkSoft beneath. Hold the final value for at least 1.5s after the count-up resolves.",
+      "logoUsage": "none",
+      "keyMetrics": [
+        { "raw": "−16.3", "value": -16.3, "context": "tCO2 ha⁻¹ yr⁻¹ · mean annual net ecosystem exchange · 2001–2023" }
+      ],
+      "props": {
+        "eyebrow": "Mean annual  ·  Net ecosystem exchange",
+        "value": -16.3,
+        "display": "−16.3",
+        "units": "tCO₂  ·  ha⁻¹  ·  yr⁻¹",
+        "caption": "Negative values indicate net removal of atmospheric carbon. Measured data, 2001–2023."
+      }
+    },
+    {
+      "id": "scene-12",
+      "clipNumber": 12,
+      "type": "pillars",
+      "title": "Pathways.",
+      "onScreenText": "Spot. Forward. Strategic. Structured.",
+      "sourceSlide": 12,
+      "startSec": 627.722,
+      "endSec": 681.326,
+      "durationSec": 53.604,
+      "voiceover": "For buyers, the approach can support spot purchase, forward documentation, optional performance-based delivery, forward offtake agreements, multi-year deployment, strategic allocation, and capital structures that combine development capital with governance, reporting, and delivery controls. But it remains the same underlying unit. Tokenisation improves traceability, portability, and settlement efficiency. The appropriate format depends on the buyer's objective and time horizon. The platform is equipped to support both immediate issuance and structured forward participation.",
+      "cues": [
+        { "atSec": 0.0,   "text": "For buyers, the approach can support…",          "purpose": "title in" },
+        { "atSec": 4.0,   "text": "spot purchase, forward documentation…",          "purpose": "row 01 reveals (Spot)" },
+        { "atSec": 9.0,   "text": "forward offtake agreements…",                    "purpose": "row 02 reveals (Forward)" },
+        { "atSec": 14.0,  "text": "strategic allocation…",                          "purpose": "row 03 reveals (Strategic)" },
+        { "atSec": 19.0,  "text": "capital structures with governance…",            "purpose": "row 04 reveals (Structured)" },
+        { "atSec": 41.84, "text": "immediate issuance and structured forward.",     "purpose": "settle; cross-dissolve out" }
+      ],
+      "visualDirection": "Four buyer modes, numbered 01–04. Quick reveals on the rows so the scene matches the brisk narration; longer hold on the closing line. No imagery.",
+      "logoUsage": "none",
+      "props": {
+        "title": "Pathways.",
+        "subtitle": "Same underlying unit. Different buyer profiles.",
+        "items": [
+          { "index": "01", "label": "Spot purchase.",       "body": "Verified credits with documentation and optional Performance Takaful." },
+          { "index": "02", "label": "Forward & offtake.",   "body": "Long-dated agreements aligned with multi-year decarbonisation plans." },
+          { "index": "03", "label": "Strategic allocation.","body": "Multi-year deployment with priority allocation rights." },
+          { "index": "04", "label": "Structured capital.",  "body": "Development capital combined with governance, reporting, and delivery controls." }
+        ]
+      }
+    },
+    {
+      "id": "scene-13",
+      "clipNumber": 13,
+      "type": "closing",
+      "title": "Direct measurement. Takaful permanence. Institutional integrity.",
+      "onScreenText": "Three lines. Logo. Location stamp.",
+      "sourceSlide": 13,
+      "startSec": 681.326,
+      "endSec": 708.206,
+      "durationSec": 26.880,
+      "voiceover": "It is a Shariah-aligned carbon platform built first for Shariah-aligned capital, and more broadly for any institution that takes integrity seriously. Direct measurement. Takaful permanence. Institutional integrity.",
+      "cues": [
+        { "atSec": 0.0,   "text": "A Shariah-aligned carbon platform…",  "purpose": "horizontal-white logo fades in at hero scale" },
+        { "atSec": 13.41, "text": "Direct measurement.",                 "purpose": "first line lands" },
+        { "atSec": 14.97, "text": "Takaful permanence.",                 "purpose": "second line lands" },
+        { "atSec": 17.91, "text": "Institutional integrity.",            "purpose": "third line lands; longest hold" },
+        { "atSec": 25.5,  "text": "(audio + visual fade together)",      "purpose": "final 1.4s: synchronous fade-out of audio bed and visual" }
+      ],
+      "visualDirection": "Quiet finish. TenTrinity Carbon horizontal-white logo at hero scale, centred. A short gold rule beneath. Three editorial lines, equal weight, staggered. Location stamp 'Guernsey · Channel Islands' in mono uppercase. No motion graphics; the scene reads as a sign-off.",
+      "logoUsage": "horizontal-white at width 520px, fades in over ~27 frames, max opacity 0.95",
+      "props": {
+        "lines": [
+          "Direct measurement.",
+          "Takaful permanence.",
+          "Institutional integrity."
+        ],
+        "location": "TenTrinity Carbon  ·  Guernsey, Channel Islands"
+      }
+    }
+  ]
+}
