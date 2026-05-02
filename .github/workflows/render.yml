@@ -1,5 +1,10 @@
 name: Render premium video
 
+# Runs Stage 1 (prepare audio, extract, transcribe) then renders the
+# Remotion composition. Assumes the Stage 2 design files have been
+# committed (presentation.json, motion-plan.json, scene-timings.json).
+# Uploads out/final.mp4 as the downloadable artifact.
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,13 +16,10 @@ on:
     branches:
       - claude/powerpoint-to-video-cloud-3oujl
     paths:
-      - 'input/**'
-      - 'public/audio/**'
       - 'src/**'
-      - 'scripts/**'
+      - 'remotion.config.ts'
       - 'package.json'
       - 'package-lock.json'
-      - 'remotion.config.ts'
       - '.github/workflows/render.yml'
 
 permissions:
@@ -28,14 +30,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref || github.ref }}
           lfs: true
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -47,7 +47,7 @@ jobs:
             libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
             libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 \
             libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64 \
-            fonts-inter fonts-jetbrains-mono fonts-noto-color-emoji || \
+            fonts-noto-color-emoji || \
           sudo apt-get install -y --no-install-recommends \
             ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
             libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 \
@@ -65,24 +65,14 @@ jobs:
       - name: Verify inputs
         run: |
           test -f input/deck.pptx || { echo "::error::input/deck.pptx is missing"; exit 1; }
-          test -f public/audio/master-voiceover.mp3 || { echo "::error::public/audio/master-voiceover.mp3 is missing"; exit 1; }
+          test -f input/master-voiceover.mp3 || { echo "::error::input/master-voiceover.mp3 is missing"; exit 1; }
 
-      - name: Extract PowerPoint
-        run: npm run extract
-
-      - name: Plan motion
-        run: npm run plan
-
-      - name: Forced alignment
+      - name: Stage 1 (prepare audio + extract + transcribe)
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-        run: npm run align
-
-      - name: Build scene timeline
-        run: npm run build:data
+        run: npm run stage1
 
       - name: Render video
-        # @remotion/renderer downloads its Chromium binary on first invocation.
         run: npm run render
 
       - name: Upload final.mp4
@@ -93,15 +83,18 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Upload generated scene data
+      - name: Upload pipeline data for inspection
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pipeline-debug
           path: |
-            public/extracted/slides.json
-            public/extracted/plan.json
-            public/extracted/alignment.json
+            src/data/pptx-extracted.json
+            src/data/master-transcript.json
+            src/data/master-transcript.txt
+            src/data/presentation.json
+            src/data/motion-plan.json
+            src/data/scene-timings.json
             src/data/scenes.json
           if-no-files-found: ignore
-          retention-days: 7
+          retention-days: 14

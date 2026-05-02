@@ -1,0 +1,65 @@
+name: Stage 1 - prepare data
+
+# Runs the mechanical prep: copy audio, extract pptx, transcribe with
+# ElevenLabs. Uploads the outputs as a downloadable artifact so I can
+# review them and author Stage 2 (presentation.json, motion-plan.json,
+# scene-timings.json) by hand.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/powerpoint-to-video-cloud-3oujl
+    paths:
+      - 'input/deck.pptx'
+      - 'input/master-voiceover.mp3'
+      - 'input/voiceover-script.txt'
+      - 'scripts/prepare-audio.ts'
+      - 'scripts/extract-pptx.ts'
+      - 'scripts/transcribe-voiceover.ts'
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install npm dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Verify inputs
+        run: |
+          test -f input/deck.pptx || { echo "::error::input/deck.pptx is missing"; exit 1; }
+          test -f input/master-voiceover.mp3 || { echo "::error::input/master-voiceover.mp3 is missing"; exit 1; }
+
+      - name: Stage 1
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: npm run stage1
+
+      - name: Upload Stage 1 outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage1-data
+          path: |
+            src/data/pptx-extracted.json
+            src/data/master-transcript.json
+            src/data/master-transcript.txt
+            public/media/**
+          if-no-files-found: error
+          retention-days: 14
