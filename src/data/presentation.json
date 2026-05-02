@@ -113,7 +113,8 @@
       ],
       "visualDirection": "Forest-green bookend. Mono eyebrow up top, three editorial creed lines stacked, each preceded by a short gold rule that travels in beside it. The third line gets the longest hold.",
       "props": {
-        "eyebrow": "TenTrinity Carbon  /  Manifesto",
+        "useLogoEyebrow": "horizontal-gold",
+        "eyebrowLabel": "Manifesto",
         "lines": [
           "Direct measurement removes gharar from the credit.",
           "Takaful removes it from the protection.",
@@ -144,10 +145,11 @@
       "props": {
         "title": "Three pillars.",
         "subtitle": "A framework built into the platform — not added after the fact.",
+        "finaleSec": 53.83,
         "items": [
-          { "index": "01", "label": "Direct measurement.",   "body": "Crediting anchored to the actual measurement of atmospheric carbon flux — not modelled approximations." },
-          { "index": "02", "label": "Takaful permanence.",   "body": "Cooperative risk transfer through a Wakalah-Mudarabah pool, with Lloyd's syndicate capacity via Shariah-compliant fronting." },
-          { "index": "03", "label": "Institutional integrity.", "body": "Continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary." }
+          { "index": "01", "label": "Direct measurement.",      "body": "Crediting anchored to the actual measurement of atmospheric carbon flux — not modelled approximations.", "revealSec": 5.99 },
+          { "index": "02", "label": "Takaful permanence.",      "body": "Cooperative risk transfer through a Wakalah-Mudarabah pool, with Lloyd's syndicate capacity via Shariah-compliant fronting.", "revealSec": 17.48 },
+          { "index": "03", "label": "Institutional integrity.", "body": "Continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary.", "revealSec": 33.83 }
         ]
       }
     },
@@ -175,11 +177,12 @@
       "props": {
         "title": "Built at scale.",
         "subtitle": "High-integrity supply, at the volumes institutional buyers require.",
+        "finaleSec": 41.0,
         "metrics": [
-          { "display": "700K+",   "value": 700, "caption": "hectares · authorised area" },
-          { "display": "30M+",    "value": 30,  "caption": "credits · Shabunda · immediate" },
-          { "display": "100M+",   "value": 100, "caption": "credits · Gabon · forward" },
-          { "display": "Lloyd's", "value": 0,   "caption": "syndicate capacity · Performance Takaful" }
+          { "display": "700K+",   "value": 700, "caption": "hectares · authorised area",                      "revealSec": 11.31 },
+          { "display": "30M+",    "value": 30,  "caption": "credits · Shabunda · immediate",                  "revealSec": 19.53 },
+          { "display": "100M+",   "value": 100, "caption": "credits · Gabon · forward",                       "revealSec": 29.59 },
+          { "display": "Lloyd's", "value": 0,   "caption": "syndicate capacity · Performance Takaful",        "revealSec": 36.93 }
         ],
         "footnote": "Operational, not theoretical."
       }
@@ -252,11 +255,12 @@
       "props": {
         "title": "Takaful permanence.",
         "subtitle": "Cooperative protection, structured for fiqh.",
+        "finaleSec": 72.78,
         "items": [
-          { "index": "Tabarru'", "label": "Donation to the pool.",       "body": "Participants contribute on a tabarru' basis. The pool, not an insurer, bears the risk." },
-          { "index": "Wakalah",  "label": "Agency, with a fee.",          "body": "The operator manages the pool under a wakalah arrangement and earns an agreed fee." },
-          { "index": "Mudarabah","label": "Profit-sharing.",              "body": "Investment returns on the pool flow back through a mudarabah structure." },
-          { "index": "Lloyd's",  "label": "Syndicate participation.",     "body": "Capacity sourced via Shariah-compliant fronting and dedicated retakaful support." }
+          { "index": "Tabarru'", "label": "Donation to the pool.",       "body": "Participants contribute on a tabarru' basis. The pool, not an insurer, bears the risk.",     "revealSec": 20.86 },
+          { "index": "Wakalah",  "label": "Agency, with a fee.",          "body": "The operator manages the pool under a wakalah arrangement and earns an agreed fee.",         "revealSec": 38.17 },
+          { "index": "Mudarabah","label": "Profit-sharing.",              "body": "Investment returns on the pool flow back through a mudarabah structure.",                     "revealSec": 54.24 },
+          { "index": "Lloyd's",  "label": "Syndicate participation.",     "body": "Capacity sourced via Shariah-compliant fronting and dedicated retakaful support.",            "revealSec": 60.87 }
         ]
       }
     },
@@ -286,12 +290,13 @@
       "props": {
         "title": "Aligned to the Maqasid.",
         "subtitle": "Five protections, satisfied directly.",
+        "finaleSec": 56.0,
         "items": [
-          { "index": "Din",   "label": "Religion.",   "body": "Stewardship (khilafah) of the natural order." },
-          { "index": "Nafs",  "label": "Life.",       "body": "Climate stability supports human life and health." },
-          { "index": "'Aql", "label": "Intellect.",  "body": "Methodology grounded in measurement, not conjecture." },
-          { "index": "Nasl",  "label": "Lineage.",    "body": "Ecosystem preservation for future generations." },
-          { "index": "Mal",   "label": "Wealth.",     "body": "Direct ownership of identifiable real assets." }
+          { "index": "Din",   "label": "Religion.",   "body": "Stewardship (khilafah) of the natural order.",          "revealSec": 11.96 },
+          { "index": "Nafs",  "label": "Life.",       "body": "Climate stability supports human life and health.",     "revealSec": 18.96 },
+          { "index": "'Aql","label": "Intellect.",  "body": "Methodology grounded in measurement, not conjecture.",  "revealSec": 26.96 },
+          { "index": "Nasl",  "label": "Lineage.",    "body": "Ecosystem preservation for future generations.",        "revealSec": 33.96 },
+          { "index": "Mal",   "label": "Wealth.",     "body": "Direct ownership of identifiable real assets.",         "revealSec": 41.96 }
         ]
       }
     },
@@ -319,11 +324,12 @@
       "props": {
         "title": "Institutional grade.",
         "subtitle": "The tests that make the allocation defensible.",
+        "finaleSec": 53.65,
         "items": [
-          { "index": "01", "label": "Direct measurement & verification.", "body": "Conducted under recognised carbon-market standards." },
-          { "index": "02", "label": "Risk transfer.",                     "body": "Handled through takaful, not conventional insurance." },
-          { "index": "03", "label": "Governance.",                        "body": "Shariah oversight aligned with AAOIFI and IFSB." },
-          { "index": "04", "label": "Documentation.",                     "body": "Every test documented; nothing taken on trust." }
+          { "index": "01", "label": "Direct measurement & verification.", "body": "Conducted under recognised carbon-market standards.", "revealSec": 12.75 },
+          { "index": "02", "label": "Risk transfer.",                     "body": "Handled through takaful, not conventional insurance.","revealSec": 21.46 },
+          { "index": "03", "label": "Governance.",                        "body": "Shariah oversight aligned with AAOIFI and IFSB.",     "revealSec": 27.46 },
+          { "index": "04", "label": "Documentation.",                     "body": "Every test documented; nothing taken on trust.",      "revealSec": 46.47 }
         ]
       }
     },
@@ -400,16 +406,22 @@
             "name": "Shabunda",
             "context": "Democratic Republic of the Congo · Congo Basin",
             "coordinates": "02° S  ·  27° E",
+            "lonDeg": 27.36,
+            "latDeg": -2.69,
             "metric": "30M+",
-            "metricCaption": "credits  ·  immediate availability"
+            "metricCaption": "credits  ·  immediate availability",
+            "revealSec": 5.19
           },
           {
             "kicker": "Pipeline  ·  Forward",
             "name": "Gabon",
             "context": "Coastal forest system · Equator",
-            "coordinates": "00°  ·  09° E",
+            "coordinates": "00° 23′ N  ·  09° 27′ E",
+            "lonDeg": 9.45,
+            "latDeg": 0.39,
             "metric": "100M+",
-            "metricCaption": "credits  ·  forward delivery"
+            "metricCaption": "credits  ·  forward delivery",
+            "revealSec": 25.09
           }
         ]
       }
@@ -438,6 +450,8 @@
         "value": -16.3,
         "display": "−16.3",
         "units": "tCO₂  ·  ha⁻¹  ·  yr⁻¹",
+        "chart": "flux",
+        "chartStartSec": 8.85,
         "caption": "Negative values indicate net removal of atmospheric carbon. Measured data, 2001–2023."
       }
     },
@@ -465,11 +479,12 @@
       "props": {
         "title": "Pathways.",
         "subtitle": "Same underlying unit. Different buyer profiles.",
+        "finaleSec": 41.84,
         "items": [
-          { "index": "01", "label": "Spot purchase.",       "body": "Verified credits with documentation and optional Performance Takaful." },
-          { "index": "02", "label": "Forward & offtake.",   "body": "Long-dated agreements aligned with multi-year decarbonisation plans." },
-          { "index": "03", "label": "Strategic allocation.","body": "Multi-year deployment with priority allocation rights." },
-          { "index": "04", "label": "Structured capital.",  "body": "Development capital combined with governance, reporting, and delivery controls." }
+          { "index": "01", "label": "Spot purchase.",       "body": "Verified credits with documentation and optional Performance Takaful.",                              "revealSec": 4.0  },
+          { "index": "02", "label": "Forward & offtake.",   "body": "Long-dated agreements aligned with multi-year decarbonisation plans.",                                "revealSec": 9.0  },
+          { "index": "03", "label": "Strategic allocation.","body": "Multi-year deployment with priority allocation rights.",                                              "revealSec": 14.0 },
+          { "index": "04", "label": "Structured capital.",  "body": "Development capital combined with governance, reporting, and delivery controls.",                     "revealSec": 19.0 }
         ]
       }
     },
@@ -500,7 +515,7 @@
           "Takaful permanence.",
           "Institutional integrity."
         ],
-        "location": "TenTrinity Carbon  ·  Guernsey, Channel Islands"
+        "location": "Guernsey  ·  Channel Islands"
       }
     }
   ]

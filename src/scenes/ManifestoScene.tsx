@@ -1,14 +1,28 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
+import { BrandLogo } from '../components/BrandLogo';
 import { SceneShell, type FootageRef } from '../components/SceneShell';
 import { theme, sizes, inkFor } from '../theme';
 import type { SurfaceKind } from '../components/Surface';
 
+type LogoVariant =
+  | 'horizontal-white'
+  | 'horizontal-gold'
+  | 'icon-gold'
+  | 'icon-gold-white'
+  | 'icon-gold-lightgrey';
+
 type Props = {
   surface: SurfaceKind;
   sceneFrames: number;
+  /** Plain-text eyebrow. Used if no logo eyebrow is requested. */
   eyebrow?: string;
+  /** If set, render the TenTrinity Carbon logo as the eyebrow instead
+   *  of plain text. */
+  useLogoEyebrow?: LogoVariant;
+  /** Mono uppercase label printed alongside the logo eyebrow. */
+  eyebrowLabel?: string;
   lines: string[];
   closer?: string;
   footage?: FootageRef;
@@ -18,6 +32,8 @@ export const ManifestoScene: React.FC<Props> = ({
   surface,
   sceneFrames,
   eyebrow,
+  useLogoEyebrow,
+  eyebrowLabel,
   lines,
   closer,
   footage,
@@ -32,7 +48,46 @@ export const ManifestoScene: React.FC<Props> = ({
   return (
     <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
       <div style={{ maxWidth: 1500, color: ink.ink }}>
-        {eyebrow ? (
+        {useLogoEyebrow ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 28,
+              marginBottom: 88,
+            }}
+          >
+            <BrandLogo
+              variant={useLogoEyebrow}
+              width={260}
+              delay={Math.round(fps * 0.1)}
+              fadeFrames={Math.round(fps * 0.7)}
+              maxOpacity={1}
+            />
+            {eyebrowLabel ? (
+              <>
+                <span
+                  style={{
+                    width: 1,
+                    height: 26,
+                    background: ink.inkFaint,
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: theme.fontMono,
+                    fontSize: sizes.eyebrow,
+                    letterSpacing: 8,
+                    textTransform: 'uppercase',
+                    color: ink.gold,
+                  }}
+                >
+                  {eyebrowLabel}
+                </span>
+              </>
+            ) : null}
+          </div>
+        ) : eyebrow ? (
           <div
             style={{
               fontFamily: theme.fontMono,

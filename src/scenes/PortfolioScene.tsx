@@ -2,6 +2,7 @@ import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KineticText } from '../components/KineticText';
 import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { PortfolioMap } from '../components/PortfolioMap';
 import { theme, sizes, inkFor } from '../theme';
 import type { SurfaceKind } from '../components/Surface';
 
@@ -10,8 +11,11 @@ export type Region = {
   name: string;
   context: string;
   coordinates?: string;
+  lonDeg: number;
+  latDeg: number;
   metric: string;
   metricCaption: string;
+  revealSec: number;
 };
 
 type Props = {
@@ -24,6 +28,13 @@ type Props = {
   footage?: FootageRef;
 };
 
+/**
+ * Portfolio scene with a real geographic visualisation:
+ *   - title + subtitle at top
+ *   - PortfolioMap centred (graticule + equator + two animated markers
+ *     + connecting line)
+ *   - a metrics row beneath the map giving each region's headline figure
+ */
 export const PortfolioScene: React.FC<Props> = ({
   surface,
   sceneFrames,
@@ -37,19 +48,21 @@ export const PortfolioScene: React.FC<Props> = ({
   const { fps } = useVideoConfig();
   const ink = inkFor(surface);
 
-  const titleDelay = Math.round(fps * 0.2);
-  const subtitleDelay = titleDelay + Math.round(fps * 0.6);
-  const firstRegionDelay = subtitleDelay + Math.round(fps * 0.6);
-  const dividerProgress = interpolate(
-    frame - firstRegionDelay,
-    [0, 24],
-    [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
-  );
+  const titleDelay = Math.round(fps * 0.1);
+  const subtitleDelay = titleDelay + Math.round(fps * 0.5);
 
   return (
     <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
-      <div style={{ width: '100%', maxWidth: 1700, color: ink.ink }}>
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 1700,
+          color: ink.ink,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         {eyebrow ? (
           <div
             style={{
@@ -58,7 +71,7 @@ export const PortfolioScene: React.FC<Props> = ({
               letterSpacing: 8,
               textTransform: 'uppercase',
               color: ink.gold,
-              marginBottom: 28,
+              marginBottom: 20,
             }}
           >
             <KineticText text={eyebrow} />
@@ -69,10 +82,11 @@ export const PortfolioScene: React.FC<Props> = ({
           style={{
             fontFamily: theme.fontDisplay,
             fontWeight: 600,
-            fontSize: sizes.title,
-            lineHeight: 1.06,
-            letterSpacing: -2,
+            fontSize: 88,
+            lineHeight: 1.04,
+            letterSpacing: -1.8,
             margin: 0,
+            textAlign: 'center',
           }}
         >
           <KineticText text={title} delay={titleDelay} staggerFrames={2.2} />
@@ -81,83 +95,75 @@ export const PortfolioScene: React.FC<Props> = ({
         {subtitle ? (
           <div
             style={{
-              marginTop: 24,
+              marginTop: 18,
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
-              fontSize: sizes.subtitle,
+              fontSize: 30,
               color: ink.inkSoft,
               maxWidth: 1300,
+              textAlign: 'center',
             }}
           >
             <KineticText text={subtitle} delay={subtitleDelay} staggerFrames={1.6} />
           </div>
         ) : null}
 
+        <div style={{ marginTop: 32 }}>
+          <PortfolioMap
+            surface={surface}
+            points={regions.map((r) => ({
+              name: r.name,
+              lonDeg: r.lonDeg,
+              latDeg: r.latDeg,
+              revealSec: r.revealSec,
+            }))}
+          />
+        </div>
+
         <div
           style={{
-            marginTop: 96,
+            marginTop: 28,
             display: 'grid',
-            gridTemplateColumns: '1fr 2px 1fr',
-            gap: 64,
-            alignItems: 'start',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 96,
+            width: '100%',
+            maxWidth: 1400,
           }}
         >
-          <RegionBlock
-            region={regions[0]}
-            delay={firstRegionDelay}
-            now={frame}
-            fps={fps}
-            ink={ink}
-          />
-          <span
-            style={{
-              alignSelf: 'stretch',
-              background: ink.gold,
-              opacity: 0.45,
-              transform: `scaleY(${dividerProgress})`,
-              transformOrigin: 'top',
-              width: 2,
-            }}
-          />
-          <RegionBlock
-            region={regions[1]}
-            delay={firstRegionDelay + Math.round(fps * 0.5)}
-            now={frame}
-            fps={fps}
-            ink={ink}
-          />
+          {regions.map((r, i) => (
+            <RegionCard key={i} region={r} ink={ink} fps={fps} now={frame} />
+          ))}
         </div>
       </div>
     </SceneShell>
   );
 };
 
-const RegionBlock: React.FC<{
+const RegionCard: React.FC<{
   region: Region;
-  delay: number;
-  now: number;
-  fps: number;
   ink: ReturnType<typeof inkFor>;
-}> = ({ region, delay, now, fps, ink }) => {
-  const local = now - delay;
+  fps: number;
+  now: number;
+}> = ({ region, ink, fps, now }) => {
+  const local = now - region.revealSec * fps;
   const s = spring({
     frame: local,
     fps,
     config: { damping: 22, stiffness: 100, mass: 0.85 },
   });
   const opacity = interpolate(s, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
-  const ty = interpolate(s, [0, 1], [22, 0], { extrapolateRight: 'clamp' });
+  const ty = interpolate(s, [0, 1], [16, 0], { extrapolateRight: 'clamp' });
 
   return (
     <div style={{ opacity, transform: `translateY(${ty}px)` }}>
       <div
         style={{
           fontFamily: theme.fontMono,
-          fontSize: 20,
+          fontSize: 18,
           letterSpacing: 6,
           textTransform: 'uppercase',
           color: ink.gold,
-          marginBottom: 24,
+          marginBottom: 14,
         }}
       >
         {region.kicker}
@@ -166,62 +172,24 @@ const RegionBlock: React.FC<{
         style={{
           fontFamily: theme.fontDisplay,
           fontWeight: 600,
-          fontSize: 96,
-          lineHeight: 1.0,
-          letterSpacing: -2.6,
+          fontSize: 72,
+          lineHeight: 0.96,
+          letterSpacing: -1.6,
           color: ink.ink,
+          fontVariantNumeric: 'tabular-nums',
         }}
       >
-        {region.name}.
+        {region.metric}
       </div>
       <div
         style={{
-          marginTop: 18,
+          marginTop: 10,
           fontFamily: theme.fontDisplay,
-          fontWeight: 300,
-          fontSize: 30,
+          fontSize: 22,
           color: ink.inkSoft,
         }}
       >
-        {region.context}
-      </div>
-      {region.coordinates ? (
-        <div
-          style={{
-            marginTop: 12,
-            fontFamily: theme.fontMono,
-            fontSize: 22,
-            letterSpacing: 4,
-            color: ink.inkFaint,
-          }}
-        >
-          {region.coordinates}
-        </div>
-      ) : null}
-      <div style={{ marginTop: 56 }}>
-        <div
-          style={{
-            fontFamily: theme.fontDisplay,
-            fontWeight: 600,
-            fontSize: 88,
-            lineHeight: 0.95,
-            letterSpacing: -2,
-            color: ink.ink,
-            fontVariantNumeric: 'tabular-nums',
-          }}
-        >
-          {region.metric}
-        </div>
-        <div
-          style={{
-            marginTop: 8,
-            fontFamily: theme.fontDisplay,
-            fontSize: 24,
-            color: ink.inkSoft,
-          }}
-        >
-          {region.metricCaption}
-        </div>
+        {region.metricCaption}
       </div>
     </div>
   );

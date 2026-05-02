@@ -2,6 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
 import { theme } from '../theme';
 import { FilmGrain } from './FilmGrain';
+import { Particles } from './Particles';
 
 export type SurfaceKind = 'forest' | 'cream' | 'footage';
 
@@ -55,11 +56,12 @@ const ForestSurface: React.FC<{ children?: React.ReactNode }> = ({ children }) =
       />
       <AbsoluteFill
         style={{
-          boxShadow: 'inset 0 0 380px 90px rgba(0,0,0,0.7)',
+          boxShadow: 'inset 0 0 460px 110px rgba(0,0,0,0.78)',
           pointerEvents: 'none',
         }}
       />
-      <FilmGrain opacity={0.07} />
+      <Particles count={42} colour="#D9BB78" intensity={0.9} />
+      <FilmGrain opacity={0.08} />
       {children}
     </>
   );
@@ -88,11 +90,25 @@ const CreamSurface: React.FC<{ children?: React.ReactNode }> = ({ children }) =>
       />
       <AbsoluteFill
         style={{
-          boxShadow: 'inset 0 0 220px 60px rgba(140,117,68,0.10)',
+          boxShadow: 'inset 0 0 260px 70px rgba(140,117,68,0.14)',
           pointerEvents: 'none',
         }}
       />
-      <FilmGrain opacity={0.05} />
+      {/* Subtle paper texture: a tile of warm noise via SVG turbulence. */}
+      <AbsoluteFill style={{ pointerEvents: 'none', opacity: 0.18 }}>
+        <svg width="100%" height="100%">
+          <filter id="paper-tex">
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves={2} seed={3} />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.55  0 0 0 0 0.46  0 0 0 0 0.27  0 0 0 0.55 0"
+            />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#paper-tex)" />
+        </svg>
+      </AbsoluteFill>
+      <Particles count={26} colour="#A88643" intensity={0.45} />
+      <FilmGrain opacity={0.06} />
       {children}
     </>
   );
@@ -103,7 +119,8 @@ const FootageSurface: React.FC<{ children?: React.ReactNode }> = ({ children }) 
     <>
       <AbsoluteFill style={{ backgroundColor: theme.forestBgLow }} />
       {children}
-      <FilmGrain opacity={0.06} />
+      <Particles count={20} colour="#FAF8F3" intensity={0.4} />
+      <FilmGrain opacity={0.07} />
     </>
   );
 };

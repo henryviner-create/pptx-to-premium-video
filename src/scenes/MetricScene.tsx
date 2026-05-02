@@ -3,6 +3,7 @@ import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { AnimatedNumber } from '../components/AnimatedNumber';
 import { KineticText } from '../components/KineticText';
 import { SceneShell, type FootageRef } from '../components/SceneShell';
+import { FluxChart } from '../components/FluxChart';
 import { theme, sizes, inkFor } from '../theme';
 import type { SurfaceKind } from '../components/Surface';
 
@@ -14,11 +15,18 @@ type Props = {
   display: string;
   units?: string;
   caption?: string;
+  /** Optional chart kind to render alongside the hero figure. */
+  chart?: 'flux';
+  /** Seconds (within scene) at which the chart begins drawing. */
+  chartStartSec?: number;
   footage?: FootageRef;
 };
 
 /**
- * Hero-metric scene. The number is the picture; nothing else competes.
+ * Hero-metric scene. The number is the picture; if a chart is provided,
+ * it sits beside the number as the data referent. For the −16.3 NEE
+ * scene that means the chart is the visual evidence the narrator is
+ * citing — Apple-keynote-style: claim, then proof.
  */
 export const MetricScene: React.FC<Props> = ({
   surface,
@@ -28,6 +36,8 @@ export const MetricScene: React.FC<Props> = ({
   display,
   units,
   caption,
+  chart,
+  chartStartSec,
   footage,
 }) => {
   const frame = useCurrentFrame();
@@ -39,6 +49,7 @@ export const MetricScene: React.FC<Props> = ({
     extrapolateRight: 'clamp',
   });
   const captionDelay = Math.round(fps * 1.6);
+  const chartStart = Math.round((chartStartSec ?? 8.85) * fps);
 
   return (
     <SceneShell surface={surface} sceneFrames={sceneFrames} footage={footage}>
@@ -46,8 +57,11 @@ export const MetricScene: React.FC<Props> = ({
         style={{
           width: '100%',
           maxWidth: 1700,
-          textAlign: 'center',
           color: ink.ink,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 24,
         }}
       >
         {eyebrow ? (
@@ -58,37 +72,34 @@ export const MetricScene: React.FC<Props> = ({
               letterSpacing: 8,
               textTransform: 'uppercase',
               color: ink.gold,
-              marginBottom: 56,
+              textAlign: 'center',
             }}
           >
             <KineticText text={eyebrow} />
           </div>
         ) : null}
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 32 }}>
-          <span
-            style={{
-              height: 2,
-              width: ruleW,
-              background: ink.gold,
-              borderRadius: 1,
-            }}
-          />
-        </div>
+        <span
+          style={{
+            height: 2,
+            width: ruleW,
+            background: ink.gold,
+            borderRadius: 1,
+          }}
+        />
 
         <div
           style={{
             fontFamily: theme.fontDisplay,
             fontWeight: 600,
-            fontSize: sizes.metric,
+            fontSize: chart ? 200 : sizes.metric,
             lineHeight: 0.94,
-            letterSpacing: -10,
+            letterSpacing: chart ? -6 : -10,
             color: ink.ink,
             fontVariantNumeric: 'tabular-nums',
             textShadow:
-              surface !== 'cream'
-                ? `0 10px 100px ${theme.goldFaint}`
-                : 'none',
+              surface !== 'cream' ? `0 10px 100px ${theme.goldFaint}` : 'none',
+            textAlign: 'center',
           }}
         >
           <AnimatedNumber
@@ -102,9 +113,8 @@ export const MetricScene: React.FC<Props> = ({
         {units ? (
           <div
             style={{
-              marginTop: 28,
               fontFamily: theme.fontMono,
-              fontSize: 30,
+              fontSize: chart ? 24 : 30,
               letterSpacing: 6,
               textTransform: 'uppercase',
               color: ink.gold,
@@ -114,18 +124,27 @@ export const MetricScene: React.FC<Props> = ({
           </div>
         ) : null}
 
+        {chart === 'flux' ? (
+          <div style={{ marginTop: 8 }}>
+            <FluxChart
+              startFrame={chartStart}
+              totalFrames={Math.round(fps * 6)}
+              surface={surface}
+            />
+          </div>
+        ) : null}
+
         {caption ? (
           <div
             style={{
-              marginTop: 56,
+              marginTop: chart ? 8 : 32,
               fontFamily: theme.fontDisplay,
               fontWeight: 300,
-              fontSize: 34,
+              fontSize: chart ? 24 : 30,
               lineHeight: 1.4,
               color: ink.inkSoft,
               maxWidth: 1300,
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              textAlign: 'center',
             }}
           >
             <KineticText text={caption} delay={captionDelay} staggerFrames={1.6} />
