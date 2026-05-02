@@ -1,0 +1,74 @@
+name: 2 - Render video
+
+# Renders the final MP4. Assumes Stage 2 design files have been committed:
+#   src/data/presentation.json
+#   src/data/motion-plan.json
+#   src/data/scene-timings.json
+#
+# The render itself runs `npm run build-video`, which copies the master
+# voiceover into public/audio/ and then renders the Remotion composition
+# `Main` to out/final.mp4.
+#
+# Output:
+#   Artifact `final-animated-presentation` containing out/final.mp4.
+#
+# Manual trigger only — `workflow_dispatch`.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install system dependencies for Chromium + ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 \
+            libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64 \
+            fonts-noto-color-emoji || \
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 \
+            libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2 \
+            fonts-noto-color-emoji
+
+      - name: Verify inputs and Stage 2 design files
+        run: |
+          test -f input/master-voiceover.mp3       || { echo "::error::input/master-voiceover.mp3 is missing";    exit 1; }
+          test -f src/data/presentation.json       || { echo "::error::src/data/presentation.json is missing — Stage 2 not authored?"; exit 1; }
+          test -f src/data/motion-plan.json        || { echo "::error::src/data/motion-plan.json is missing";     exit 1; }
+          test -f src/data/scene-timings.json      || { echo "::error::src/data/scene-timings.json is missing";   exit 1; }
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render
+        # @remotion/renderer downloads its Chromium binary on first invocation.
+        run: npm run build-video
+
+      - name: Upload final.mp4
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-animated-presentation
+          path: out/final.mp4
+          if-no-files-found: error
+          retention-days: 30

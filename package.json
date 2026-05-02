@@ -7,10 +7,10 @@
     "prepare:audio": "tsx scripts/prepare-audio.ts",
     "extract": "tsx scripts/extract-pptx.ts",
     "transcribe": "tsx scripts/transcribe-voiceover.ts",
-    "stage1": "npm run prepare:audio && npm run extract && npm run transcribe",
+    "prepare:data": "npm run prepare:audio && npm run extract && npm run transcribe",
     "studio": "remotion studio",
     "render": "remotion render Main out/final.mp4 --concurrency=1 --log=verbose",
-    "build:video": "npm run prepare:audio && npm run render",
+    "build-video": "npm run prepare:audio && npm run render",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
