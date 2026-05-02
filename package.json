@@ -6,10 +6,11 @@
   "scripts": {
     "extract": "tsx scripts/extract-pptx.ts",
     "extract:legacy": "node scripts/extract-pptx.mjs",
-    "plan": "node scripts/plan-motion.mjs",
+    "plan": "tsx scripts/create-motion-plan.ts",
+    "plan:legacy": "node scripts/plan-motion.mjs",
     "align": "node scripts/align-audio.mjs",
     "build:data": "node scripts/build-data.mjs",
-    "prepare:all": "npm run extract && npm run extract:legacy && npm run plan && npm run align && npm run build:data",
+    "prepare:all": "npm run extract && npm run extract:legacy && npm run plan && npm run plan:legacy && npm run align && npm run build:data",
     "studio": "remotion studio",
     "render": "remotion render Main out/final.mp4 --concurrency=1 --log=verbose",
     "build:video": "npm run prepare:all && npm run render",
