@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig } from 'remot
 import presentation from './data/presentation.json';
 import sceneTimings from './data/scene-timings.json';
 import footageManifest from './data/footage.json';
+import conceptsManifest from './data/concepts.json';
 import { StatementScene } from './scenes/StatementScene';
 import { ManifestoScene } from './scenes/ManifestoScene';
 import { PillarsScene } from './scenes/PillarsScene';
@@ -33,9 +34,13 @@ const COMPONENTS: Record<string, React.FC<any>> = {
   closing: ClosingScene,
 };
 
-type ManifestEntry = { slug: string; file: string; pexelsId: number };
-const FOOTAGE_BY_SLUG: Map<string, ManifestEntry> = new Map(
-  (footageManifest.entries as ManifestEntry[]).map((e) => [e.slug, e]),
+type FootageEntry = { slug: string; file: string };
+type ConceptEntry = { slug: string; file: string };
+const FOOTAGE_BY_SLUG: Map<string, FootageEntry> = new Map(
+  (footageManifest.entries as FootageEntry[]).map((e) => [e.slug, e]),
+);
+const CONCEPTS_BY_SLUG: Map<string, ConceptEntry> = new Map(
+  (conceptsManifest.entries as ConceptEntry[]).map((e) => [e.slug, e]),
 );
 
 type Scene = (typeof presentation.scenes)[number];
@@ -64,18 +69,35 @@ export const Video: React.FC = () => {
         // fade-out resolves at the end of the audio bed.
         const sceneFrames = isLast ? baseFrames : baseFrames + OVERLAP_FRAMES;
 
-        // Resolve surface + footage. If a scene declares footage but the
-        // manifest doesn't have it (Pexels returned nothing, or the
-        // workflow has never run), downgrade to forest.
+        // Resolve surface + footage with the precedence:
+        //   concept clip (Arcads) > footage clip (Pexels) > declared surface.
+        // A concept clip implies the scene plays on a 'footage' surface
+        // even if it declared 'cream' / 'forest' — the AI clip is the
+        // backdrop. If neither concept nor footage are available, the
+        // scene falls back to the declared surface so the render is
+        // never broken by a missing asset.
         const declaredSurface = (scene as { surface?: SurfaceKind }).surface ?? 'forest';
+        const conceptDecl = (scene as { concept?: { slug: string; push?: FootageRef['push'] } }).concept;
         const footageDecl = (scene as { footage?: { slug: string; push?: FootageRef['push'] } }).footage;
+
         let surface: SurfaceKind = declaredSurface;
         let footage: FootageRef | undefined;
-        if (declaredSurface === 'footage' && footageDecl) {
+
+        if (conceptDecl) {
+          const conceptEntry = CONCEPTS_BY_SLUG.get(conceptDecl.slug);
+          if (conceptEntry) {
+            surface = 'footage';
+            footage = { file: conceptEntry.file, push: conceptDecl.push };
+          }
+        }
+
+        if (!footage && footageDecl) {
           const entry = FOOTAGE_BY_SLUG.get(footageDecl.slug);
           if (entry) {
+            surface = 'footage';
             footage = { file: entry.file, push: footageDecl.push };
-          } else {
+          } else if (declaredSurface === 'footage') {
+            // Scene declared footage as primary but the asset is missing.
             surface = 'forest';
           }
         }

@@ -40,11 +40,22 @@ what the voiceover actually says, not just what the deck contains.
 | 3    | `npm run extract:pptx`              | `input/deck.pptx`                                                                    | `src/data/pptx-extracted.json`, `public/media/*`                                                                |
 | 4    | `npm run parse:transcript`          | `input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt`             | `src/data/master-transcript.json`, `src/data/master-transcript.txt`, `src/data/scene-timings.json`              |
 | 5    | `npm run prepare:footage`           | `src/data/footage-plan.json` + Pexels API                                            | `public/footage/*.mp4`, `src/data/footage.json` (manifest)                                                      |
+| 6    | `npm run prepare:concepts`          | `src/data/concept-plan.json` + Arcads API (Veo 3.1, Sora 2)                         | `public/concepts/*.mp4`, `src/data/concepts.json` (manifest)                                                    |
 
-`npm run prepare:data` runs all five in order. The footage step needs
-`PEXELS_API_KEY` as a repo secret. Without it, the script writes an
-empty manifest and exits 0; footage scenes degrade to the forest
-surface at render time so the rest of the film still works. Stage 1 runs in the
+`npm run prepare:data` runs all six in order. The footage step needs
+`PEXELS_API_KEY`; the concept step needs `ARCADS_API_KEY`. Without
+either, those scripts write empty manifests and exit 0 so the rest of
+the pipeline still runs — scenes that expected a missing asset fall
+back along the precedence: concept clip > footage clip > declared
+surface. The film is never broken by a missing asset.
+
+Concept clips are AI-generated cinematic backdrops for the four scenes
+where pure typography or stock footage cannot deliver the keynote-grade
+visual: Three Pillars (3), Takaful structure (6), the carbon credit as
+object (9), and carbon flux into canopy beneath the −16.3 hero metric
+(11). Prompts and intent live in `src/data/concept-plan.json`. The
+Arcads API contract is HTTP Basic auth with `ARCADS_API_KEY` as
+username and an empty password; base URL `https://external-api.arcads.ai`. Stage 1 runs in the
 `1 - Prepare data` workflow (`.github/workflows/prepare-data.yml`),
 which **commits the generated files back to the branch** so Claude
 Code can read them via a normal `git pull`. There is no artifact
@@ -94,6 +105,7 @@ and re-author the Stage 2 files.
 | `input/tentrinity-carbon-horizontal-gold.png`                                 | yes      | Horizontal lockup, gold. |
 | `input/tentrinity-carbon-horizontal-white.png`                                | yes      | Horizontal lockup, white. |
 | GitHub secret `PEXELS_API_KEY`                                                | yes      | Free Pexels API key, used by `prepare:footage`. |
+| GitHub secret `ARCADS_API_KEY`                                                | yes      | Arcads API key, used by `prepare:concepts` to generate AI concept clips via Veo 3.1 / Sora 2. |
 
 ## Scene grammar
 
@@ -196,6 +208,7 @@ scripts/
   extract-pptx.ts                    Stage 1 step 3: pptx -> pptx-extracted.json + public/media
   parse-aaf-transcript.ts            Stage 1 step 4: parse AAF transcript -> master-transcript.{json,txt} + scene-timings.json
   prepare-footage.ts                 Stage 1 step 5: Pexels search + download -> public/footage + footage.json manifest
+  prepare-concepts.ts                Stage 1 step 6: Arcads (Veo/Sora) generation + download -> public/concepts + concepts.json manifest
 
 src/
   Root.tsx                           registerComposition('Main')

@@ -1,0 +1,60 @@
+{
+  "$author": "claude (stage 2)",
+  "$generatedAt": "2026-05-02",
+  "$intent": "Hand-tuned prompts for the abstract concept moments the film earns. Each prompt is institutional, sober, no people, no idols, no music-video tropes. Calibrated for an Arabic-institutional audience.",
+  "$audienceNotes": [
+    "No human figures (full or partial), no faces.",
+    "No religious iconography or symbolic representations of belief beyond abstract light/architecture.",
+    "Deep institutional dark palette with restrained gold accents.",
+    "Slow, contemplative camera moves only — no whip pans, no rapid cuts.",
+    "16:9 landscape, ~10–12s duration, photographic realism."
+  ],
+  "model_defaults": {
+    "model": "veo31",
+    "duration": 10,
+    "aspectRatio": "16:9",
+    "resolution": "720p"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene-03",
+      "slug": "scene-03-three-pillars-of-light",
+      "model": "veo31",
+      "duration": 10,
+      "aspectRatio": "16:9",
+      "resolution": "720p",
+      "prompt": "Three towering vertical pillars of softly luminous brushed-bronze metal standing in deep institutional dark space, evenly spaced, photographed from a low angle with the camera dollying very slowly forward, gold-amber light catching the edges, deep forest-green ambient backdrop with atmospheric haze, dust motes drifting in shafts of light, ultra-minimal composition, no people, no faces, no text, no logos, photographic realism, contemplative cinematic pace, 16:9 landscape, anamorphic lens flare subtle, institutional finance film aesthetic",
+      "intent": "Plays beneath the 'Three pillars' scene as the type sequences in. The pillars literalise the metaphor without becoming clipart."
+    },
+    {
+      "sceneId": "scene-06",
+      "slug": "scene-06-takaful-flow-diagram",
+      "model": "sora2",
+      "duration": 12,
+      "aspectRatio": "16:9",
+      "resolution": "720p",
+      "prompt": "An abstract architectural diagram visualised in volumetric light: a single luminous golden pool of light at the centre, with delicate streams of golden particles flowing inward from beyond the frame edges into the pool, the camera slowly orbits a quarter turn around the structure, deep institutional dark background, soft volumetric god-rays, no people, no faces, no text, no UI, no charts, no graphs, contemplative scientific feel, photographic realism, cinematic 16:9 landscape, ultra-slow motion",
+      "intent": "Plays beneath the takaful scene as the narrator names Tabarru', Wakalah, Mudarabah. The visual metaphor is the cooperative pool with contributions flowing in."
+    },
+    {
+      "sceneId": "scene-09",
+      "slug": "scene-09-credit-token-floating",
+      "model": "veo31",
+      "duration": 10,
+      "aspectRatio": "16:9",
+      "resolution": "720p",
+      "prompt": "A single abstract geometric token-like object floating in deep institutional dark space, faceted like a polished anodized brushed bronze prism, slowly rotating on its vertical axis, soft volumetric light catching each facet as it turns, gentle bloom on the highlights, the camera locked off in a wide shot, no people, no text, no logos, no UI, photographic realism, ultra-minimal composition, contemplative cinematic pace, 16:9 landscape, gallery-installation quality lighting",
+      "intent": "Plays beneath the 'two product categories' scene as the abstract referent of 'one underlying credit, two forms'. The token is the credit; tokenisation is just a different way to hold it."
+    },
+    {
+      "sceneId": "scene-11",
+      "slug": "scene-11-carbon-flux-canopy",
+      "model": "sora2",
+      "duration": 12,
+      "aspectRatio": "16:9",
+      "resolution": "720p",
+      "prompt": "Slow aerial descent toward a vast tropical forest canopy at golden hour seen from high above, with delicate golden particles streaming downward through the atmosphere into the canopy below, the camera ultra-slowly descends, dust and atmospheric haze catching the light, soft volumetric beams, deep forest-green and warm gold palette, no people, no faces, no text, no UI, no overlays, scientific reverence, photographic realism, cinematic 16:9 landscape, ultra-slow motion",
+      "intent": "Plays as the prelude to the −16.3 hero metric. Visualises absorption: carbon flowing FROM the atmosphere INTO the forest. The chart explains the magnitude; this clip earns the magnitude emotionally."
+    }
+  ]
+}

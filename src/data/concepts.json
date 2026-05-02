@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-05-02T11:59:51.936Z",
+  "source": "src/data/concept-plan.json",
+  "entries": [],
+  "warnings": [
+    "ARCADS_API_KEY not set; no concept clips generated."
+  ]
+}

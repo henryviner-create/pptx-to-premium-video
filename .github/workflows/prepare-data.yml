@@ -62,6 +62,7 @@ jobs:
       - name: Run Stage 1
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          ARCADS_API_KEY: ${{ secrets.ARCADS_API_KEY }}
         run: npm run prepare:data
 
       - name: Commit and push generated data
@@ -76,9 +77,11 @@ jobs:
             src/data/master-transcript.txt \
             src/data/scene-timings.json \
             src/data/footage.json \
+            src/data/concepts.json \
             public/media \
             public/logos \
-            public/footage
+            public/footage \
+            public/concepts
 
           if git diff --cached --quiet; then
             echo "No data changes to commit."
