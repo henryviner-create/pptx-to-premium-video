@@ -1,0 +1,1426 @@
+{
+  "sourceFile": "input/deck.pptx",
+  "generatedAt": "2026-05-02T10:26:30.353Z",
+  "slideCount": 13,
+  "slides": [
+    {
+      "slideNumber": 1,
+      "sourceXml": "ppt/slides/slide1.xml",
+      "rawText": "ISLAMIC FINANCE EDITION\nAN INTRODUCTION\nDirect measurement.   Takaful permanence.   Institutional integrity.\nApril 2026\nGuernsey, Channel Islands",
+      "inferredTitle": "ISLAMIC FINANCE EDITION",
+      "textRuns": [
+        {
+          "text": "AN INTRODUCTION",
+          "level": 0,
+          "bold": true,
+          "sizePt": 10
+        },
+        {
+          "text": "Direct measurement.   Takaful permanence.   Institutional integrity.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 18
+        },
+        {
+          "text": "April 2026",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9
+        },
+        {
+          "text": "Guernsey, Channel Islands",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "2026",
+          "value": 2026,
+          "context": "April 2026"
+        }
+      ],
+      "media": [
+        {
+          "file": "media/slide1-image-1-1.png",
+          "originalName": "image-1-1.png",
+          "bytes": 119060,
+          "ext": "png"
+        }
+      ],
+      "screenshot": "slides/slide-1.png",
+      "notes": "1"
+    },
+    {
+      "slideNumber": 2,
+      "sourceXml": "ppt/slides/slide2.xml",
+      "rawText": "“\nDirect measurement removes gharar from the credit.\nTakaful removes it from the protection.\nTogether, the standard.\nTENTRINITY CARBON   /   METHODOLOGY AND RISK FRAMEWORK\nSTRICTLY CONFIDENTIAL\nMANIFESTO   /   02",
+      "inferredTitle": "“",
+      "textRuns": [
+        {
+          "text": "Direct measurement removes gharar from the credit.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 34
+        },
+        {
+          "text": "Takaful removes it from the protection.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 34
+        },
+        {
+          "text": "Together, the standard.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 34
+        },
+        {
+          "text": "TENTRINITY CARBON   /   METHODOLOGY AND RISK FRAMEWORK",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "MANIFESTO   /   02",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "MANIFESTO   /   02"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-2.png",
+      "notes": "2"
+    },
+    {
+      "slideNumber": 3,
+      "sourceXml": "ppt/slides/slide3.xml",
+      "rawText": "THE PROPOSITION\nA different standard for\nShariah-compliant capital.\n01\nDirect measurement.\nAtmospheric carbon flux is measured, not modelled. Net-removal performance is evidenced by science, calibrated to physical reality, and disclosed with quantified uncertainty. Lower gharar exposure under fiqh.\n02\nTakaful permanence.\nCooperative risk-transfer through a Wakala-Mudaraba pool. Lloyd's syndicate capacity sourced via Shariah-compliant fronting and Managing General Agent arrangements, with dedicated Retakaful providers.\n03\nInstitutional integrity.\nAn independent Shariah Supervisory Board hosted within a dedicated Guernsey subsidiary. Continuous oversight under AAOIFI standards, applied at origination, structuring, and distribution.\nSTRICTLY CONFIDENTIAL\nPROPOSITION   /   03",
+      "inferredTitle": "THE PROPOSITION",
+      "textRuns": [
+        {
+          "text": "A different standard for",
+          "level": 0,
+          "bold": false,
+          "sizePt": 32
+        },
+        {
+          "text": "Shariah-compliant capital.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 32
+        },
+        {
+          "text": "01",
+          "level": 0,
+          "bold": false,
+          "sizePt": 56
+        },
+        {
+          "text": "Direct measurement.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 18
+        },
+        {
+          "text": "Atmospheric carbon flux is measured, not modelled. Net-removal performance is evidenced by science, calibrated to physical reality, and disclosed with quantified uncertainty. Lower gharar exposure under fiqh.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "02",
+          "level": 0,
+          "bold": false,
+          "sizePt": 56
+        },
+        {
+          "text": "Takaful permanence.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 18
+        },
+        {
+          "text": "Cooperative risk-transfer through a Wakala-Mudaraba pool. Lloyd's syndicate capacity sourced via Shariah-compliant fronting and Managing General Agent arrangements, with dedicated Retakaful providers.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "03",
+          "level": 0,
+          "bold": false,
+          "sizePt": 56
+        },
+        {
+          "text": "Institutional integrity.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 18
+        },
+        {
+          "text": "An independent Shariah Supervisory Board hosted within a dedicated Guernsey subsidiary. Continuous oversight under AAOIFI standards, applied at origination, structuring, and distribution.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "PROPOSITION   /   03",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "01",
+          "value": 1,
+          "context": "01"
+        },
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "02"
+        },
+        {
+          "raw": "03",
+          "value": 3,
+          "context": "03"
+        },
+        {
+          "raw": "03",
+          "value": 3,
+          "context": "PROPOSITION   /   03"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-3.png",
+      "notes": "3"
+    },
+    {
+      "slideNumber": 4,
+      "sourceXml": "ppt/slides/slide4.xml",
+      "rawText": "THE PLATFORM\nBuilt at scale.\nHigh-integrity nature-based carbon, structured for institutional volume.\n700k+\nhectares  ·  authorised area\n30 M+\ncredits  ·  Shabunda  ·  immediate availability\n100 M+\ncredits  ·  Gabon  ·  forward delivery\nLloyd's\nsyndicate capacity  ·  Performance Takaful\nSTRICTLY CONFIDENTIAL\nPLATFORM   /   04",
+      "inferredTitle": "THE PLATFORM",
+      "textRuns": [
+        {
+          "text": "Built at scale.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 40
+        },
+        {
+          "text": "High-integrity nature-based carbon, structured for institutional volume.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 14
+        },
+        {
+          "text": "700k+",
+          "level": 0,
+          "bold": true,
+          "sizePt": 56
+        },
+        {
+          "text": "hectares  ·  authorised area",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "30 M+",
+          "level": 0,
+          "bold": true,
+          "sizePt": 56
+        },
+        {
+          "text": "credits  ·  Shabunda  ·  immediate availability",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "100 M+",
+          "level": 0,
+          "bold": true,
+          "sizePt": 56
+        },
+        {
+          "text": "credits  ·  Gabon  ·  forward delivery",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "Lloyd's",
+          "level": 0,
+          "bold": true,
+          "sizePt": 56
+        },
+        {
+          "text": "syndicate capacity  ·  Performance Takaful",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "PLATFORM   /   04",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "700k",
+          "value": 700,
+          "context": "700k+"
+        },
+        {
+          "raw": "30 M",
+          "value": 30,
+          "context": "30 M+"
+        },
+        {
+          "raw": "100 M",
+          "value": 100,
+          "context": "100 M+"
+        },
+        {
+          "raw": "04",
+          "value": 4,
+          "context": "PLATFORM   /   04"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-4.png",
+      "notes": "4"
+    },
+    {
+      "slideNumber": 5,
+      "sourceXml": "ppt/slides/slide5.xml",
+      "rawText": "A NEW SCIENTIFIC METHODOLOGY\nFrom estimation\nto measurement.\nMost nature-based credits rely on modelling. The change is to anchor crediting around direct measurement of atmospheric carbon flux, a method auditable against physical reality.\nESTIMATION-FIRST\nDIRECT MEASUREMENT\n→\nModelled baselines and counterfactual scenarios.\nAtmospheric carbon flux measured, not inferred.\nInfrequent sampling, extrapolated over long monitoring periods.\nContinuous observation calibrated to physical frameworks.\nStatic biomass estimates that do not reflect real dynamics.\nGround-based validation anchors performance to reality.\nHigher methodology debate, higher gharar exposure.\nLower gharar exposure; defensible to Shariah and audit.\nSTRICTLY CONFIDENTIAL\nMETHODOLOGY   /   05",
+      "inferredTitle": "A NEW SCIENTIFIC METHODOLOGY",
+      "textRuns": [
+        {
+          "text": "From estimation",
+          "level": 0,
+          "bold": false,
+          "sizePt": 42
+        },
+        {
+          "text": "to measurement.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 42
+        },
+        {
+          "text": "Most nature-based credits rely on modelling. The change is to anchor crediting around direct measurement of atmospheric carbon flux, a method auditable against physical reality.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "ESTIMATION-FIRST",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "DIRECT MEASUREMENT",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "→",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Modelled baselines and counterfactual scenarios.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Atmospheric carbon flux measured, not inferred.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Infrequent sampling, extrapolated over long monitoring periods.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Continuous observation calibrated to physical frameworks.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Static biomass estimates that do not reflect real dynamics.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Ground-based validation anchors performance to reality.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Higher methodology debate, higher gharar exposure.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "Lower gharar exposure; defensible to Shariah and audit.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "METHODOLOGY   /   05",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "05",
+          "value": 5,
+          "context": "METHODOLOGY   /   05"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-5.png",
+      "notes": "5"
+    },
+    {
+      "slideNumber": 6,
+      "sourceXml": "ppt/slides/slide6.xml",
+      "rawText": "PERFORMANCE TAKAFUL\nCooperative risk transfer,\nstructured for fiqh.\nBuffer-pool conventions inherited from REDD+ are replaced by a mutually owned risk pool that operates under Wakala-Mudaraba principles. Capacity is sourced through Lloyd's syndicate participation via Shariah-compliant fronting and dedicated Retakaful providers.\nTabarru'\nDonation-based contribution to the mutual risk pool.\nWakala\nAgency arrangement. The Wakeel manages the pool for an agreed fee.\nMudaraba\nProfit-sharing structure for surplus deployment.\nSTRICTLY CONFIDENTIAL\nTAKAFUL   /   06",
+      "inferredTitle": "PERFORMANCE TAKAFUL",
+      "textRuns": [
+        {
+          "text": "Cooperative risk transfer,",
+          "level": 0,
+          "bold": false,
+          "sizePt": 38
+        },
+        {
+          "text": "structured for fiqh.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 38
+        },
+        {
+          "text": "Buffer-pool conventions inherited from REDD+ are replaced by a mutually owned risk pool that operates under Wakala-Mudaraba principles. Capacity is sourced through Lloyd's syndicate participation via Shariah-compliant fronting and dedicated Retakaful providers.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "Tabarru'",
+          "level": 0,
+          "bold": true,
+          "sizePt": 22
+        },
+        {
+          "text": "Donation-based contribution to the mutual risk pool.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "Wakala",
+          "level": 0,
+          "bold": true,
+          "sizePt": 22
+        },
+        {
+          "text": "Agency arrangement. The Wakeel manages the pool for an agreed fee.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "Mudaraba",
+          "level": 0,
+          "bold": true,
+          "sizePt": 22
+        },
+        {
+          "text": "Profit-sharing structure for surplus deployment.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "TAKAFUL   /   06",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "06",
+          "value": 6,
+          "context": "TAKAFUL   /   06"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-6.png",
+      "notes": "6"
+    },
+    {
+      "slideNumber": 7,
+      "sourceXml": "ppt/slides/slide7.xml",
+      "rawText": "ADDITIONALITY\nAligned to the maqasid.\nCapital deployed produces a real-economy outcome consistent with the objectives of the Shariah, with hifdh al-bi'ah (preservation of the natural environment) at the centre.\nDin\nRELIGION\nStewardship (khilafah) of the natural order.\nNafs\nLIFE\nClimate stability supports human life and health.\n'Aql\nINTELLECT\nDirect measurement: science over speculation.\nNasl\nLINEAGE\nLong-term ecosystem protection for future generations.\nMal\nWEALTH\nDirect ownership of verified real-asset carbon.\nBi'ah\nENVIRONMENT\nHifdh al-bi'ah: forest preservation as core objective.\nSTRICTLY CONFIDENTIAL\nMAQASID   /   07",
+      "inferredTitle": "ADDITIONALITY",
+      "textRuns": [
+        {
+          "text": "Aligned to the maqasid.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 40
+        },
+        {
+          "text": "Capital deployed produces a real-economy outcome consistent with the objectives of the Shariah, with hifdh al-bi'ah (preservation of the natural environment) at the centre.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "Din",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "RELIGION",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Stewardship (khilafah) of the natural order.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "Nafs",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "LIFE",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Climate stability supports human life and health.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "'Aql",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "INTELLECT",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Direct measurement: science over speculation.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "Nasl",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "LINEAGE",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Long-term ecosystem protection for future generations.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "Mal",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "WEALTH",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Direct ownership of verified real-asset carbon.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "Bi'ah",
+          "level": 0,
+          "bold": true,
+          "sizePt": 26
+        },
+        {
+          "text": "ENVIRONMENT",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Hifdh al-bi'ah: forest preservation as core objective.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "MAQASID   /   07",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "07",
+          "value": 7,
+          "context": "MAQASID   /   07"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-7.png",
+      "notes": "7"
+    },
+    {
+      "slideNumber": 8,
+      "sourceXml": "ppt/slides/slide8.xml",
+      "rawText": "SHARIAH COMPLIANCE AND INTEGRITY\nThe institutional framework.\n01\nAdditionality\nCapital causality and real-economy linkage. A measurable test, not a narrative one.\n02\nMethodology\nDirect measurement of atmospheric carbon flux.\n03\nVerification\nIndependent third-party assessment under recognised standards.\n04\nRisk Transfer\nCooperative Performance Takaful with Lloyd's-sourced capacity.\n05\nGovernance\nShariah Subsidiary in Guernsey hosting an independent Supervisory Board.\n06\nStandards\nAAOIFI, IFSB, recognised carbon-market standards.\nSTRICTLY CONFIDENTIAL\nFRAMEWORK   /   08",
+      "inferredTitle": "SHARIAH COMPLIANCE AND INTEGRITY",
+      "textRuns": [
+        {
+          "text": "The institutional framework.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 40
+        },
+        {
+          "text": "01",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Additionality",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "Capital causality and real-economy linkage. A measurable test, not a narrative one.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "02",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Methodology",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "Direct measurement of atmospheric carbon flux.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "03",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Verification",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "Independent third-party assessment under recognised standards.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "04",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Risk Transfer",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "Cooperative Performance Takaful with Lloyd's-sourced capacity.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "05",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Governance",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "Shariah Subsidiary in Guernsey hosting an independent Supervisory Board.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "06",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Standards",
+          "level": 0,
+          "bold": true,
+          "sizePt": 17
+        },
+        {
+          "text": "AAOIFI, IFSB, recognised carbon-market standards.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 12
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "FRAMEWORK   /   08",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "01",
+          "value": 1,
+          "context": "01"
+        },
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "02"
+        },
+        {
+          "raw": "03",
+          "value": 3,
+          "context": "03"
+        },
+        {
+          "raw": "04",
+          "value": 4,
+          "context": "04"
+        },
+        {
+          "raw": "05",
+          "value": 5,
+          "context": "05"
+        },
+        {
+          "raw": "06",
+          "value": 6,
+          "context": "06"
+        },
+        {
+          "raw": "08",
+          "value": 8,
+          "context": "FRAMEWORK   /   08"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-8.png",
+      "notes": "8"
+    },
+    {
+      "slideNumber": 9,
+      "sourceXml": "ppt/slides/slide9.xml",
+      "rawText": "CARBON PRODUCTS\nTwo product categories.\nDesigned for institutional volume, scientifically robust, and structured for Shariah-compliant capital.\n01\nHIGH-INTEGRITY\nCarbon credits.\nOne tonne of CO2e avoided or sequestered through rigorous, scientifically grounded project activity. Independently verified, ex-post, long-dated. Recognised under fiqh as bay' al-huquq al-ma'nawiyyah.\n02\nTOKENISED\nCarbon credits.\nCredits issued in tokenised form for traceability, auditability, and settlement efficiency. Aligned with the asset-backed direction of the AAOIFI exposure draft of Shariah Standard 62 on Sukuk.\nSTRICTLY CONFIDENTIAL\nPRODUCTS   /   09",
+      "inferredTitle": "CARBON PRODUCTS",
+      "textRuns": [
+        {
+          "text": "Two product categories.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 38
+        },
+        {
+          "text": "Designed for institutional volume, scientifically robust, and structured for Shariah-compliant capital.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "01",
+          "level": 0,
+          "bold": false,
+          "sizePt": 80
+        },
+        {
+          "text": "HIGH-INTEGRITY",
+          "level": 0,
+          "bold": true,
+          "sizePt": 10
+        },
+        {
+          "text": "Carbon credits.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 26
+        },
+        {
+          "text": "One tonne of CO2e avoided or sequestered through rigorous, scientifically grounded project activity. Independently verified, ex-post, long-dated. Recognised under fiqh as bay' al-huquq al-ma'nawiyyah.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "02",
+          "level": 0,
+          "bold": false,
+          "sizePt": 80
+        },
+        {
+          "text": "TOKENISED",
+          "level": 0,
+          "bold": true,
+          "sizePt": 10
+        },
+        {
+          "text": "Carbon credits.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 26
+        },
+        {
+          "text": "Credits issued in tokenised form for traceability, auditability, and settlement efficiency. Aligned with the asset-backed direction of the AAOIFI exposure draft of Shariah Standard 62 on Sukuk.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "PRODUCTS   /   09",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "01",
+          "value": 1,
+          "context": "01"
+        },
+        {
+          "raw": "2",
+          "value": 2,
+          "context": "One tonne of CO2e avoided or sequestered through rigorous, scientifically grounded project activity. Independently verified, ex-post, long-dated. Recognised under fiqh as bay' al-huquq al-ma'nawiyyah."
+        },
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "02"
+        },
+        {
+          "raw": "62",
+          "value": 62,
+          "context": "Credits issued in tokenised form for traceability, auditability, and settlement efficiency. Aligned with the asset-backed direction of the AAOIFI exposure draft of Shariah Standard 62 on Sukuk."
+        },
+        {
+          "raw": "09",
+          "value": 9,
+          "context": "PRODUCTS   /   09"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-9.png",
+      "notes": "9"
+    },
+    {
+      "slideNumber": 10,
+      "sourceXml": "ppt/slides/slide10.xml",
+      "rawText": "PORTFOLIO  /  GEOGRAPHIC FOOTPRINT\nThe active portfolio.\nFLAGSHIP   ·   ACTIVE\nShabunda.\nDemocratic Republic of the Congo   ·   Congo Basin\n02° 41′ S    ·    27° 21′ E\n30 M+\ncredits  ·  immediate availability  ·  multi-decade pipeline\nPIPELINE   ·   FORWARD   ·   PROJECT G\nGabon.\nRepublic of Gabon   ·   Coastal forest system\n00° 23′ N    ·    09° 27′ E\n100 M+\ncredits  ·  forward delivery  ·  sovereign framework alignment\nSTRICTLY CONFIDENTIAL\nPORTFOLIO   /   10",
+      "inferredTitle": "PORTFOLIO  /  GEOGRAPHIC FOOTPRINT",
+      "textRuns": [
+        {
+          "text": "The active portfolio.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 40
+        },
+        {
+          "text": "FLAGSHIP   ·   ACTIVE",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Shabunda.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 44
+        },
+        {
+          "text": "Democratic Republic of the Congo   ·   Congo Basin",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "02° 41′ S    ·    27° 21′ E",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9.5
+        },
+        {
+          "text": "30 M+",
+          "level": 0,
+          "bold": true,
+          "sizePt": 60
+        },
+        {
+          "text": "credits  ·  immediate availability  ·  multi-decade pipeline",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "PIPELINE   ·   FORWARD   ·   PROJECT G",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Gabon.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 44
+        },
+        {
+          "text": "Republic of Gabon   ·   Coastal forest system",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "00° 23′ N    ·    09° 27′ E",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9.5
+        },
+        {
+          "text": "100 M+",
+          "level": 0,
+          "bold": true,
+          "sizePt": 60
+        },
+        {
+          "text": "credits  ·  forward delivery  ·  sovereign framework alignment",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "PORTFOLIO   /   10",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "02° 41′ S    ·    27° 21′ E"
+        },
+        {
+          "raw": "41",
+          "value": 41,
+          "context": "02° 41′ S    ·    27° 21′ E"
+        },
+        {
+          "raw": "27",
+          "value": 27,
+          "context": "02° 41′ S    ·    27° 21′ E"
+        },
+        {
+          "raw": "21",
+          "value": 21,
+          "context": "02° 41′ S    ·    27° 21′ E"
+        },
+        {
+          "raw": "30 M",
+          "value": 30,
+          "context": "30 M+"
+        },
+        {
+          "raw": "00",
+          "value": 0,
+          "context": "00° 23′ N    ·    09° 27′ E"
+        },
+        {
+          "raw": "23",
+          "value": 23,
+          "context": "00° 23′ N    ·    09° 27′ E"
+        },
+        {
+          "raw": "09",
+          "value": 9,
+          "context": "00° 23′ N    ·    09° 27′ E"
+        },
+        {
+          "raw": "27",
+          "value": 27,
+          "context": "00° 23′ N    ·    09° 27′ E"
+        },
+        {
+          "raw": "100 M",
+          "value": 100,
+          "context": "100 M+"
+        },
+        {
+          "raw": "10",
+          "value": 10,
+          "context": "PORTFOLIO   /   10"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-10.png",
+      "notes": "10"
+    },
+    {
+      "slideNumber": 11,
+      "sourceXml": "ppt/slides/slide11.xml",
+      "rawText": "PROJECT  /  SHABUNDA\nVerified\nnet-removal performance.\nMEAN ANNUAL\n−16.3\ntCO2 ha⁻¹ yr⁻¹\nNegative values indicate net removal of atmospheric carbon. Q2 marks the seasonal peak of net flux into the forest system.\nQUARTERLY MEAN\nSource: PEM Shabunda direct measurement carbon flux programme, 2001–2023. Indicative.\nSTRICTLY CONFIDENTIAL\nPERFORMANCE   /   11",
+      "inferredTitle": "PROJECT  /  SHABUNDA",
+      "textRuns": [
+        {
+          "text": "Verified",
+          "level": 0,
+          "bold": false,
+          "sizePt": 36
+        },
+        {
+          "text": "net-removal performance.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 36
+        },
+        {
+          "text": "MEAN ANNUAL",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "−16.3",
+          "level": 0,
+          "bold": true,
+          "sizePt": 96
+        },
+        {
+          "text": "tCO2 ha⁻¹ yr⁻¹",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "Negative values indicate net removal of atmospheric carbon. Q2 marks the seasonal peak of net flux into the forest system.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11
+        },
+        {
+          "text": "QUARTERLY MEAN",
+          "level": 0,
+          "bold": true,
+          "sizePt": 9
+        },
+        {
+          "text": "Source: PEM Shabunda direct measurement carbon flux programme, 2001–2023. Indicative.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8.5
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "PERFORMANCE   /   11",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "16.3",
+          "value": 16.3,
+          "context": "−16.3"
+        },
+        {
+          "raw": "2",
+          "value": 2,
+          "context": "tCO2 ha⁻¹ yr⁻¹"
+        },
+        {
+          "raw": "2 m",
+          "value": 2,
+          "context": "Negative values indicate net removal of atmospheric carbon. Q2 marks the seasonal peak of net flux into the forest system."
+        },
+        {
+          "raw": "2001",
+          "value": 2001,
+          "context": "Source: PEM Shabunda direct measurement carbon flux programme, 2001–2023. Indicative."
+        },
+        {
+          "raw": "2023.",
+          "value": 2023,
+          "context": "Source: PEM Shabunda direct measurement carbon flux programme, 2001–2023. Indicative."
+        },
+        {
+          "raw": "11",
+          "value": 11,
+          "context": "PERFORMANCE   /   11"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-11.png",
+      "notes": "11"
+    },
+    {
+      "slideNumber": 12,
+      "sourceXml": "ppt/slides/slide12.xml",
+      "rawText": "ENGAGEMENT\nPathways forward.\nTenTrinity Carbon engages with hyperscalers, corporates, Islamic financial institutions, sovereign wealth, Takaful operators, and family offices.\n01\nImmediate procurement\nSpot purchase of verified credits with documentation and optional Performance Takaful.\n02\nForward and offtake\nLong-dated agreements aligned with multi-year decarbonisation plans, with priority allocation.\n03\nStrategic investment\nAnchor offtake plus development capital, with governance, reporting, and oversight rights.\n04\nTokenised credits\nCredits delivered in tokenised form for traceability, lifecycle tracking, and settlement efficiency.\nSTRICTLY CONFIDENTIAL\nENGAGEMENT   /   12",
+      "inferredTitle": "ENGAGEMENT",
+      "textRuns": [
+        {
+          "text": "Pathways forward.",
+          "level": 0,
+          "bold": true,
+          "sizePt": 40
+        },
+        {
+          "text": "TenTrinity Carbon engages with hyperscalers, corporates, Islamic financial institutions, sovereign wealth, Takaful operators, and family offices.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 13
+        },
+        {
+          "text": "01",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Immediate procurement",
+          "level": 0,
+          "bold": true,
+          "sizePt": 16
+        },
+        {
+          "text": "Spot purchase of verified credits with documentation and optional Performance Takaful.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "02",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Forward and offtake",
+          "level": 0,
+          "bold": true,
+          "sizePt": 16
+        },
+        {
+          "text": "Long-dated agreements aligned with multi-year decarbonisation plans, with priority allocation.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "03",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Strategic investment",
+          "level": 0,
+          "bold": true,
+          "sizePt": 16
+        },
+        {
+          "text": "Anchor offtake plus development capital, with governance, reporting, and oversight rights.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "04",
+          "level": 0,
+          "bold": false,
+          "sizePt": 22
+        },
+        {
+          "text": "Tokenised credits",
+          "level": 0,
+          "bold": true,
+          "sizePt": 16
+        },
+        {
+          "text": "Credits delivered in tokenised form for traceability, lifecycle tracking, and settlement efficiency.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 11.5
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "ENGAGEMENT   /   12",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "01",
+          "value": 1,
+          "context": "01"
+        },
+        {
+          "raw": "02",
+          "value": 2,
+          "context": "02"
+        },
+        {
+          "raw": "03",
+          "value": 3,
+          "context": "03"
+        },
+        {
+          "raw": "04",
+          "value": 4,
+          "context": "04"
+        },
+        {
+          "raw": "12",
+          "value": 12,
+          "context": "ENGAGEMENT   /   12"
+        }
+      ],
+      "media": [],
+      "screenshot": "slides/slide-12.png",
+      "notes": "12"
+    },
+    {
+      "slideNumber": 13,
+      "sourceXml": "ppt/slides/slide13.xml",
+      "rawText": "ISLAMIC FINANCE EDITION\nDirect measurement.\nTakaful permanence.\nInstitutional integrity.\nTenTrinity Carbon  ·  Guernsey, Channel Islands\nA division of TenTrinity Group\nSTRICTLY CONFIDENTIAL   ·   APRIL 2026\n© TENTRINITY CARBON 2026",
+      "inferredTitle": "ISLAMIC FINANCE EDITION",
+      "textRuns": [
+        {
+          "text": "Direct measurement.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 52
+        },
+        {
+          "text": "Takaful permanence.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 52
+        },
+        {
+          "text": "Institutional integrity.",
+          "level": 0,
+          "bold": false,
+          "sizePt": 52
+        },
+        {
+          "text": "TenTrinity Carbon  ·  Guernsey, Channel Islands",
+          "level": 0,
+          "bold": false,
+          "sizePt": 10
+        },
+        {
+          "text": "A division of TenTrinity Group",
+          "level": 0,
+          "bold": false,
+          "sizePt": 9
+        },
+        {
+          "text": "STRICTLY CONFIDENTIAL   ·   APRIL 2026",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        },
+        {
+          "text": "© TENTRINITY CARBON 2026",
+          "level": 0,
+          "bold": false,
+          "sizePt": 8
+        }
+      ],
+      "numbers": [
+        {
+          "raw": "2026",
+          "value": 2026,
+          "context": "STRICTLY CONFIDENTIAL   ·   APRIL 2026"
+        },
+        {
+          "raw": "2026",
+          "value": 2026,
+          "context": "© TENTRINITY CARBON 2026"
+        }
+      ],
+      "media": [
+        {
+          "file": "media/slide13-image-13-1.png",
+          "originalName": "image-13-1.png",
+          "bytes": 318531,
+          "ext": "png"
+        }
+      ],
+      "screenshot": "slides/slide-13.png",
+      "notes": "13"
+    }
+  ],
+  "usage": "Source material only. Do NOT use slide screenshots as the main video — every slide is reinterpreted as an animated Remotion scene."
+}

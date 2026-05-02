@@ -1,0 +1,35 @@
+{
+  "name": "pptx-to-premium-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloud-only pipeline: PowerPoint + voiceover -> premium animated Remotion video.",
+  "scripts": {
+    "prepare:audio": "tsx scripts/prepare-audio.ts",
+    "prepare:logos": "tsx scripts/prepare-logos.ts",
+    "extract:pptx": "tsx scripts/extract-pptx.ts",
+    "parse:transcript": "tsx scripts/parse-aaf-transcript.ts",
+    "prepare:data": "npm run prepare:audio && npm run prepare:logos && npm run extract:pptx && npm run parse:transcript",
+    "studio": "remotion studio",
+    "render": "remotion render AnimatedPresentation out/final.mp4",
+    "build-video": "npm run prepare:audio && npm run prepare:logos && npm run render",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.230",
+    "@remotion/cli": "4.0.230",
+    "@remotion/google-fonts": "4.0.230",
+    "@remotion/renderer": "4.0.230",
+    "@remotion/shapes": "4.0.230",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.230"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "fast-xml-parser": "4.5.0",
+    "jszip": "3.10.1",
+    "tsx": "4.19.2",
+    "typescript": "5.5.4"
+  }
+}

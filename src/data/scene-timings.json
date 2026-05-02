@@ -1,0 +1,644 @@
+{
+  "source": "input/TenTrinityCarbon_AAF_aligned_detailed_timestamped_transcript.txt",
+  "generatedAt": "2026-05-02T10:26:31.039Z",
+  "fps": 30,
+  "totalDurationSec": 708.206,
+  "sceneCount": 13,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "clipNumber": 1,
+      "startSec": 0,
+      "endSec": 27.167,
+      "durationSec": 27.167,
+      "titleSuggestion": "Voluntary carbon has a structural problem",
+      "fullText": "Voluntary carbon has a structural problem. The credits trade on credibility, but the methodology that produces them often does not bear close inspection. For institutional capital, and especially for capital that must meet the principles of Shariah, this is not a matter of taste. It is a matter of compliance.",
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.232,
+          "durationSec": 3.232,
+          "text": "Voluntary carbon has a structural problem."
+        },
+        {
+          "startSec": 3.232,
+          "endSec": 11.21,
+          "durationSec": 7.978,
+          "text": "The credits trade on credibility, but the methodology that produces them often does not bear close inspection."
+        },
+        {
+          "startSec": 11.21,
+          "endSec": 23.128,
+          "durationSec": 11.918,
+          "text": "For institutional capital, and especially for capital that must meet the principles of Shariah, this is not a matter of taste."
+        },
+        {
+          "startSec": 23.128,
+          "endSec": 27.167,
+          "durationSec": 4.039,
+          "text": "It is a matter of compliance."
+        }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "clipNumber": 2,
+      "startSec": 27.167,
+      "endSec": 68.807,
+      "durationSec": 41.64,
+      "titleSuggestion": "TenTrinity Carbon was built to address it",
+      "fullText": "TenTrinity Carbon was built to address it. Two principal sources of gharar sit at the heart of voluntary carbon as it is conventionally structured. The first is the credit itself, where modelled estimates substitute for measured outcomes. The second is the protection mechanism, where conventional buffer pools and indemnity insurance carry their own structural concerns under Islamic finance. Both must be addressed. Direct measurement removes gharar from the credit. Takaful removes it from the protection. Together, they form the standard.",
+      "cues": [
+        {
+          "startSec": 27.167,
+          "endSec": 30.27,
+          "durationSec": 3.103,
+          "text": "TenTrinity Carbon was built to address it."
+        },
+        {
+          "startSec": 30.27,
+          "endSec": 38.478,
+          "durationSec": 8.208,
+          "text": "Two principal sources of gharar sit at the heart of voluntary carbon as it is conventionally structured."
+        },
+        {
+          "startSec": 38.478,
+          "endSec": 46.486,
+          "durationSec": 8.008,
+          "text": "The first is the credit itself, where modelled estimates substitute for measured outcomes."
+        },
+        {
+          "startSec": 46.486,
+          "endSec": 57.496,
+          "durationSec": 11.01,
+          "text": "The second is the protection mechanism, where conventional buffer pools and indemnity insurance carry their own structural concerns under Islamic finance."
+        },
+        {
+          "startSec": 57.496,
+          "endSec": 60.399,
+          "durationSec": 2.903,
+          "text": "Both must be addressed."
+        },
+        {
+          "startSec": 60.399,
+          "endSec": 63.401,
+          "durationSec": 3.002,
+          "text": "Direct measurement removes gharar from the credit."
+        },
+        {
+          "startSec": 63.401,
+          "endSec": 67.806,
+          "durationSec": 4.405,
+          "text": "Takaful removes it from the protection."
+        },
+        {
+          "startSec": 67.806,
+          "endSec": 68.807,
+          "durationSec": 1.001,
+          "text": "Together, they form the standard."
+        }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "clipNumber": 3,
+      "startSec": 68.807,
+      "endSec": 127.242,
+      "durationSec": 58.435,
+      "titleSuggestion": "Three pillars hold the framework together",
+      "fullText": "Three pillars hold the framework together. The first is direct measurement: crediting anchored to the actual measurement of atmospheric carbon flux, not to modelled approximations. The second is takaful permanence: cooperative risk transfer through a mutually owned pool structured under wakalah-mudarabah principles, with capacity sourced from Lloyd’s syndicate participation via Shariah-compliant fronting. The third is institutional integrity: continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary, applied at every stage from origination to distribution. None of this was added after the fact. It is how the platform was built.",
+      "cues": [
+        {
+          "startSec": 68.807,
+          "endSec": 74.793,
+          "durationSec": 5.986,
+          "text": "Three pillars hold the framework together."
+        },
+        {
+          "startSec": 74.793,
+          "endSec": 86.29,
+          "durationSec": 11.497,
+          "text": "The first is direct measurement: crediting anchored to the actual measurement of atmospheric carbon flux, not to modelled approximations."
+        },
+        {
+          "startSec": 86.29,
+          "endSec": 102.633,
+          "durationSec": 16.343,
+          "text": "The second is takaful permanence: cooperative risk transfer through a mutually owned pool structured under wakalah-mudarabah principles, with capacity sourced from Lloyd’s syndicate participation via Shariah-compliant fronting."
+        },
+        {
+          "startSec": 102.633,
+          "endSec": 117.171,
+          "durationSec": 14.538,
+          "text": "The third is institutional integrity: continuous Shariah Supervisory Board oversight, hosted within a dedicated Guernsey subsidiary, applied at every stage from origination to distribution."
+        },
+        {
+          "startSec": 117.171,
+          "endSec": 121.826,
+          "durationSec": 4.655,
+          "text": "None of this was added after the fact."
+        },
+        {
+          "startSec": 121.826,
+          "endSec": 127.242,
+          "durationSec": 5.416,
+          "text": "It is how the platform was built."
+        }
+      ]
+    },
+    {
+      "id": "scene-04",
+      "clipNumber": 4,
+      "startSec": 127.242,
+      "endSec": 176.744,
+      "durationSec": 49.502,
+      "titleSuggestion": "Scale has long been the missing ingredient in voluntary carbon",
+      "fullText": "Scale has long been the missing ingredient in voluntary carbon. High-integrity supply, at the volumes institutional buyers require, has remained scarce. TenTrinity Carbon holds authorised access to roughly seven hundred thousand hectares of forest under management. The flagship project, Shabunda, in the Democratic Republic of the Congo, has more than thirty million credits available immediately. The forward pipeline in Gabon represents a hundred million credits or more. The protection layer is sourced through Lloyd’s syndicate capacity. The platform is not theoretical. It is operational, at the scale institutional capital requires.",
+      "cues": [
+        {
+          "startSec": 127.242,
+          "endSec": 132.657,
+          "durationSec": 5.415,
+          "text": "Scale has long been the missing ingredient in voluntary carbon."
+        },
+        {
+          "startSec": 132.657,
+          "endSec": 138.554,
+          "durationSec": 5.897,
+          "text": "High-integrity supply, at the volumes institutional buyers require, has remained scarce."
+        },
+        {
+          "startSec": 138.554,
+          "endSec": 146.773,
+          "durationSec": 8.219,
+          "text": "TenTrinity Carbon holds authorised access to roughly seven hundred thousand hectares of forest under management."
+        },
+        {
+          "startSec": 146.773,
+          "endSec": 156.828,
+          "durationSec": 10.055,
+          "text": "The flagship project, Shabunda, in the Democratic Republic of the Congo, has more than thirty million credits available immediately."
+        },
+        {
+          "startSec": 156.828,
+          "endSec": 164.176,
+          "durationSec": 7.348,
+          "text": "The forward pipeline in Gabon represents a hundred million credits or more."
+        },
+        {
+          "startSec": 164.176,
+          "endSec": 168.526,
+          "durationSec": 4.35,
+          "text": "The protection layer is sourced through Lloyd’s syndicate capacity."
+        },
+        {
+          "startSec": 168.526,
+          "endSec": 171.04,
+          "durationSec": 2.514,
+          "text": "The platform is not theoretical."
+        },
+        {
+          "startSec": 171.04,
+          "endSec": 176.744,
+          "durationSec": 5.704,
+          "text": "It is operational, at the scale institutional capital requires."
+        }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "clipNumber": 5,
+      "startSec": 176.744,
+      "endSec": 243.853,
+      "durationSec": 67.109,
+      "titleSuggestion": "Methodology is where the contrast becomes most apparent",
+      "fullText": "Methodology is where the contrast becomes most apparent. The dominant approach in nature-based credits is estimation-first: modelled baselines, counterfactual scenarios, infrequent sampling extrapolated over long monitoring periods, biomass estimates that do not reflect what is actually happening on the ground today. This is where the methodology debate sits. Under fiqh, it is also where the gharar exposure is highest. TenTrinity Carbon takes a different approach. Atmospheric carbon flux is measured continuously, not inferred. Observation is calibrated to physical frameworks. Ground-based validation anchors performance to reality. The result is a credit that is materially defensible, to Shariah scholars, to auditors, and to procurement committees alike. The protection mechanism follows the same logic.",
+      "cues": [
+        {
+          "startSec": 176.744,
+          "endSec": 181.773,
+          "durationSec": 5.029,
+          "text": "Methodology is where the contrast becomes most apparent."
+        },
+        {
+          "startSec": 181.773,
+          "endSec": 201.522,
+          "durationSec": 19.749,
+          "text": "The dominant approach in nature-based credits is estimation-first: modelled baselines, counterfactual scenarios, infrequent sampling extrapolated over long monitoring periods, biomass estimates that do not reflect what is actually happening on the ground today."
+        },
+        {
+          "startSec": 201.522,
+          "endSec": 205.27,
+          "durationSec": 3.748,
+          "text": "This is where the methodology debate sits."
+        },
+        {
+          "startSec": 205.27,
+          "endSec": 212.95,
+          "durationSec": 7.68,
+          "text": "Under fiqh, it is also where the gharar exposure is highest."
+        },
+        {
+          "startSec": 212.95,
+          "endSec": 214.413,
+          "durationSec": 1.463,
+          "text": "TenTrinity Carbon takes a different approach."
+        },
+        {
+          "startSec": 214.413,
+          "endSec": 221.179,
+          "durationSec": 6.766,
+          "text": "Atmospheric carbon flux is measured continuously, not inferred."
+        },
+        {
+          "startSec": 221.179,
+          "endSec": 223.739,
+          "durationSec": 2.56,
+          "text": "Observation is calibrated to physical frameworks."
+        },
+        {
+          "startSec": 223.739,
+          "endSec": 228.036,
+          "durationSec": 4.297,
+          "text": "Ground-based validation anchors performance to reality."
+        },
+        {
+          "startSec": 228.036,
+          "endSec": 239.647,
+          "durationSec": 11.611,
+          "text": "The result is a credit that is materially defensible, to Shariah scholars, to auditors, and to procurement committees alike."
+        },
+        {
+          "startSec": 239.647,
+          "endSec": 243.853,
+          "durationSec": 4.206,
+          "text": "The protection mechanism follows the same logic."
+        }
+      ]
+    },
+    {
+      "id": "scene-06",
+      "clipNumber": 6,
+      "startSec": 243.853,
+      "endSec": 324.859,
+      "durationSec": 81.006,
+      "titleSuggestion": "Conventional voluntary carbon relies on buffer pools, credits set aside…",
+      "fullText": "Conventional voluntary carbon relies on buffer pools, credits set aside against risk, and indemnity-assurance mechanisms carried by insurance providers. Both raise structural concerns under Islamic finance. In their place, permanence is supported through takaful: a cooperative risk pool, backed by participants, operating under a classical structure. The donation-based contribution to the pool follows a wakalah agency arrangement, under which the operator manages the pool and earns an agreed fee. Mudarabah provides the profit-sharing structure. The credit is supported through Lloyd’s syndicate participation via Shariah-compliant fronting and dedicated retakaful support. The structure functions as protection, but not as conventional insurance.",
+      "cues": [
+        {
+          "startSec": 243.853,
+          "endSec": 258.95,
+          "durationSec": 15.097,
+          "text": "Conventional voluntary carbon relies on buffer pools, credits set aside against risk, and indemnity-assurance mechanisms carried by insurance providers."
+        },
+        {
+          "startSec": 258.95,
+          "endSec": 264.718,
+          "durationSec": 5.768,
+          "text": "Both raise structural concerns under Islamic finance."
+        },
+        {
+          "startSec": 264.718,
+          "endSec": 282.024,
+          "durationSec": 17.306,
+          "text": "In their place, permanence is supported through takaful: a cooperative risk pool, backed by participants, operating under a classical structure."
+        },
+        {
+          "startSec": 282.024,
+          "endSec": 298.102,
+          "durationSec": 16.078,
+          "text": "The donation-based contribution to the pool follows a wakalah agency arrangement, under which the operator manages the pool and earns an agreed fee."
+        },
+        {
+          "startSec": 298.102,
+          "endSec": 304.73,
+          "durationSec": 6.628,
+          "text": "Mudarabah provides the profit-sharing structure."
+        },
+        {
+          "startSec": 304.73,
+          "endSec": 316.635,
+          "durationSec": 11.905,
+          "text": "The credit is supported through Lloyd’s syndicate participation via Shariah-compliant fronting and dedicated retakaful support."
+        },
+        {
+          "startSec": 316.635,
+          "endSec": 324.859,
+          "durationSec": 8.224,
+          "text": "The structure functions as protection, but not as conventional insurance."
+        }
+      ]
+    },
+    {
+      "id": "scene-07",
+      "clipNumber": 7,
+      "startSec": 324.859,
+      "endSec": 389.825,
+      "durationSec": 64.966,
+      "titleSuggestion": "Beyond the contractual mechanics lies the question often left unanswered:…",
+      "fullText": "Beyond the contractual mechanics lies the question often left unanswered: whether the underlying activity that actually stands as the object is also Shariah-aligned. Viewed through the objectives of Shariah, the case is unusually strong: the protection of religion through stewardship of the natural order; the protection of life, given climate stability is linked to human health; the protection of intellect, by anchoring methodology in science rather than conjecture; the protection of lineage through ecosystem preservation for future generations; and the protection of wealth through direct ownership of identifiable real assets, rather than synthetic exposure. The measured credit is treated as a real asset, and the forest as a living environmental asset. This is not theological branding. It is the logic of the business.",
+      "cues": [
+        {
+          "startSec": 324.859,
+          "endSec": 336.818,
+          "durationSec": 11.959,
+          "text": "Beyond the contractual mechanics lies the question often left unanswered: whether the underlying activity that actually stands as the object is also Shariah-aligned."
+        },
+        {
+          "startSec": 336.818,
+          "endSec": 373.584,
+          "durationSec": 36.766,
+          "text": "Viewed through the objectives of Shariah, the case is unusually strong: the protection of religion through stewardship of the natural order; the protection of life, given climate stability is linked to human health; the protection of intellect, by anchoring methodology in science rather than conjecture; the protection of lineage through ecosystem preservation for future generations; and the protection of wealth through direct ownership of identifiable real assets, rather than synthetic exposure."
+        },
+        {
+          "startSec": 373.584,
+          "endSec": 382.715,
+          "durationSec": 9.131,
+          "text": "The measured credit is treated as a real asset, and the forest as a living environmental asset."
+        },
+        {
+          "startSec": 382.715,
+          "endSec": 385.543,
+          "durationSec": 2.828,
+          "text": "This is not theological branding."
+        },
+        {
+          "startSec": 385.543,
+          "endSec": 389.825,
+          "durationSec": 4.282,
+          "text": "It is the logic of the business."
+        }
+      ]
+    },
+    {
+      "id": "scene-08",
+      "clipNumber": 8,
+      "startSec": 389.825,
+      "endSec": 451.004,
+      "durationSec": 61.179,
+      "titleSuggestion": "The institutional framework then adds the tests that make the capital…",
+      "fullText": "The institutional framework then adds the tests that make the capital allocation defensible. Direct measurement and verification are conducted under recognised carbon-market standards. Risk transfer is handled through takaful. Governance is carried through Shariah oversight and independent supervisory-board standards, aligned with AAOIFI, IFSB, and recognised carbon-market frameworks. Each test is documented. Together, they are what make the platform institutional-grade rather than promotional.",
+      "cues": [
+        {
+          "startSec": 389.825,
+          "endSec": 402.576,
+          "durationSec": 12.751,
+          "text": "The institutional framework then adds the tests that make the capital allocation defensible."
+        },
+        {
+          "startSec": 402.576,
+          "endSec": 411.281,
+          "durationSec": 8.705,
+          "text": "Direct measurement and verification are conducted under recognised carbon-market standards."
+        },
+        {
+          "startSec": 411.281,
+          "endSec": 417.288,
+          "durationSec": 6.007,
+          "text": "Risk transfer is handled through takaful."
+        },
+        {
+          "startSec": 417.288,
+          "endSec": 436.292,
+          "durationSec": 19.004,
+          "text": "Governance is carried through Shariah oversight and independent supervisory-board standards, aligned with AAOIFI, IFSB, and recognised carbon-market frameworks."
+        },
+        {
+          "startSec": 436.292,
+          "endSec": 439.479,
+          "durationSec": 3.187,
+          "text": "Each test is documented."
+        },
+        {
+          "startSec": 439.479,
+          "endSec": 451.004,
+          "durationSec": 11.525,
+          "text": "Together, they are what make the platform institutional-grade rather than promotional."
+        }
+      ]
+    },
+    {
+      "id": "scene-09",
+      "clipNumber": 9,
+      "startSec": 451.004,
+      "endSec": 519.497,
+      "durationSec": 68.493,
+      "titleSuggestion": "TenTrinity Carbon then uses two product categories from this structure",
+      "fullText": "TenTrinity Carbon then uses two product categories from this structure. The first is the high-integrity carbon credit itself: one tonne of CO2 equivalent avoided or sequestered, independently verified and issued in ex-post form, where the environmental effect is recognised as a tradable unit. It is not merely the sale of an intangible right without substance. The second is the same credit rendered into tokenised form, where tokenisation functions as institutional infrastructure: traceability, portability, and settlement efficiency. It aligns with the asset-backed direction described in modern Shariah standards on tokenisation. In this context, tokenisation is not a separate cryptocurrency exposure.",
+      "cues": [
+        {
+          "startSec": 451.004,
+          "endSec": 456.357,
+          "durationSec": 5.353,
+          "text": "TenTrinity Carbon then uses two product categories from this structure."
+        },
+        {
+          "startSec": 456.357,
+          "endSec": 479.734,
+          "durationSec": 23.377,
+          "text": "The first is the high-integrity carbon credit itself: one tonne of CO2 equivalent avoided or sequestered, independently verified and issued in ex-post form, where the environmental effect is recognised as a tradable unit."
+        },
+        {
+          "startSec": 479.734,
+          "endSec": 490.33,
+          "durationSec": 10.596,
+          "text": "It is not merely the sale of an intangible right without substance."
+        },
+        {
+          "startSec": 490.33,
+          "endSec": 503.876,
+          "durationSec": 13.546,
+          "text": "The second is the same credit rendered into tokenised form, where tokenisation functions as institutional infrastructure: traceability, portability, and settlement efficiency."
+        },
+        {
+          "startSec": 503.876,
+          "endSec": 512.397,
+          "durationSec": 8.521,
+          "text": "It aligns with the asset-backed direction described in modern Shariah standards on tokenisation."
+        },
+        {
+          "startSec": 512.397,
+          "endSec": 519.497,
+          "durationSec": 7.1,
+          "text": "In this context, tokenisation is not a separate cryptocurrency exposure."
+        }
+      ]
+    },
+    {
+      "id": "scene-10",
+      "clipNumber": 10,
+      "startSec": 519.497,
+      "endSec": 569.887,
+      "durationSec": 50.39,
+      "titleSuggestion": "It is the same underlying credit, made operationally cleaner",
+      "fullText": "It is the same underlying credit, made operationally cleaner. The project anchor of the active portfolio is Shabunda, in the Democratic Republic of the Congo. It is the flagship asset. It sits in the Congo Basin, around two degrees south and twenty-seven degrees east, with thirty million credits available immediately. The multi-decade pipeline behind it includes a Gabon project on the equator, in the coastal forest system. It is a forward-delivery asset sized at over a hundred million credits, structured in alignment with Shariah-compliant frameworks. The projects are designed to produce credits under the standard described.",
+      "cues": [
+        {
+          "startSec": 519.497,
+          "endSec": 524.688,
+          "durationSec": 5.191,
+          "text": "It is the same underlying credit, made operationally cleaner."
+        },
+        {
+          "startSec": 524.688,
+          "endSec": 533.37,
+          "durationSec": 8.682,
+          "text": "The project anchor of the active portfolio is Shabunda, in the Democratic Republic of the Congo."
+        },
+        {
+          "startSec": 533.37,
+          "endSec": 535.608,
+          "durationSec": 2.238,
+          "text": "It is the flagship asset."
+        },
+        {
+          "startSec": 535.608,
+          "endSec": 545.901,
+          "durationSec": 10.293,
+          "text": "It sits in the Congo Basin, around two degrees south and twenty-seven degrees east, with thirty million credits available immediately."
+        },
+        {
+          "startSec": 545.901,
+          "endSec": 554.582,
+          "durationSec": 8.681,
+          "text": "The multi-decade pipeline behind it includes a Gabon project on the equator, in the coastal forest system."
+        },
+        {
+          "startSec": 554.582,
+          "endSec": 563.801,
+          "durationSec": 9.219,
+          "text": "It is a forward-delivery asset sized at over a hundred million credits, structured in alignment with Shariah-compliant frameworks."
+        },
+        {
+          "startSec": 563.801,
+          "endSec": 569.887,
+          "durationSec": 6.086,
+          "text": "The projects are designed to produce credits under the standard described."
+        }
+      ]
+    },
+    {
+      "id": "scene-11",
+      "clipNumber": 11,
+      "startSec": 569.887,
+      "endSec": 627.722,
+      "durationSec": 57.835,
+      "titleSuggestion": "The single most important data point is this: Shabunda’s mean annual net…",
+      "fullText": "The single most important data point is this: Shabunda’s mean annual net ecosystem exchange, derived from measurement, is approximately minus 16.3 tonnes of CO2 equivalent per hectare per year. The figure is negative because the forest is removing carbon from the atmosphere. The quarterly distribution reveals seasonality, with [unclear] marking the peak of net flux into the system. This is not a modelled output. It is measured data over the composite period from 2001 to 2023, forming the evidence base behind the credit.",
+      "cues": [
+        {
+          "startSec": 569.887,
+          "endSec": 590.238,
+          "durationSec": 20.351,
+          "text": "The single most important data point is this: Shabunda’s mean annual net ecosystem exchange, derived from measurement, is approximately minus 16.3 tonnes of CO2 equivalent per hectare per year."
+        },
+        {
+          "startSec": 590.238,
+          "endSec": 599.231,
+          "durationSec": 8.993,
+          "text": "The figure is negative because the forest is removing carbon from the atmosphere."
+        },
+        {
+          "startSec": 599.231,
+          "endSec": 608.98,
+          "durationSec": 9.749,
+          "text": "The quarterly distribution reveals seasonality, with [unclear] marking the peak of net flux into the system."
+        },
+        {
+          "startSec": 608.98,
+          "endSec": 614.944,
+          "durationSec": 5.964,
+          "text": "This is not a modelled output."
+        },
+        {
+          "startSec": 614.944,
+          "endSec": 627.722,
+          "durationSec": 12.778,
+          "text": "It is measured data over the composite period from 2001 to 2023, forming the evidence base behind the credit."
+        }
+      ]
+    },
+    {
+      "id": "scene-12",
+      "clipNumber": 12,
+      "startSec": 627.722,
+      "endSec": 681.326,
+      "durationSec": 53.604,
+      "titleSuggestion": "For buyers, the approach can support spot purchase, forward documentation,…",
+      "fullText": "For buyers, the approach can support spot purchase, forward documentation, optional performance-based delivery, forward offtake agreements, multi-year deployment, strategic allocation, and capital structures that combine development capital with governance, reporting, and delivery controls. But it remains the same underlying unit. Tokenisation improves traceability, portability, and settlement efficiency. The appropriate format depends on the buyer’s objective and time horizon. The platform is equipped to support both immediate issuance and structured forward participation. What TenTrinity Carbon is building is not a niche solution for specialised buyers.",
+      "cues": [
+        {
+          "startSec": 627.722,
+          "endSec": 649.599,
+          "durationSec": 21.877,
+          "text": "For buyers, the approach can support spot purchase, forward documentation, optional performance-based delivery, forward offtake agreements, multi-year deployment, strategic allocation, and capital structures that combine development capital with governance, reporting, and delivery controls."
+        },
+        {
+          "startSec": 649.599,
+          "endSec": 653.482,
+          "durationSec": 3.883,
+          "text": "But it remains the same underlying unit."
+        },
+        {
+          "startSec": 653.482,
+          "endSec": 658.691,
+          "durationSec": 5.209,
+          "text": "Tokenisation improves traceability, portability, and settlement efficiency."
+        },
+        {
+          "startSec": 658.691,
+          "endSec": 664.468,
+          "durationSec": 5.777,
+          "text": "The appropriate format depends on the buyer’s objective and time horizon."
+        },
+        {
+          "startSec": 664.468,
+          "endSec": 673.56,
+          "durationSec": 9.092,
+          "text": "The platform is equipped to support both immediate issuance and structured forward participation."
+        },
+        {
+          "startSec": 673.56,
+          "endSec": 681.326,
+          "durationSec": 7.766,
+          "text": "What TenTrinity Carbon is building is not a niche solution for specialised buyers."
+        }
+      ]
+    },
+    {
+      "id": "scene-13",
+      "clipNumber": 13,
+      "startSec": 681.326,
+      "endSec": 708.206,
+      "durationSec": 26.88,
+      "titleSuggestion": "It is a Shariah-aligned carbon platform built first for Shariah-aligned…",
+      "fullText": "It is a Shariah-aligned carbon platform built first for Shariah-aligned capital, and more broadly for any institution that takes integrity seriously. Direct measurement. Takaful permanence. Institutional integrity.",
+      "cues": [
+        {
+          "startSec": 681.326,
+          "endSec": 698.734,
+          "durationSec": 17.408,
+          "text": "It is a Shariah-aligned carbon platform built first for Shariah-aligned capital, and more broadly for any institution that takes integrity seriously."
+        },
+        {
+          "startSec": 698.734,
+          "endSec": 701.294,
+          "durationSec": 2.56,
+          "text": "Direct measurement."
+        },
+        {
+          "startSec": 701.294,
+          "endSec": 704.238,
+          "durationSec": 2.944,
+          "text": "Takaful permanence."
+        },
+        {
+          "startSec": 704.238,
+          "endSec": 708.206,
+          "durationSec": 3.968,
+          "text": "Institutional integrity."
+        }
+      ]
+    }
+  ]
+}
