@@ -14,5 +14,5 @@
     "noEmit": true,
     "lib": ["DOM", "ES2020"]
   },
-  "include": ["src", "remotion.config.ts"]
+  "include": ["src", "remotion.config.ts", "scripts/**/*.ts"]
 }
